@@ -214,6 +214,71 @@
   </v-sheet>
   </div>
   <portableaudio></portableaudio>
+  <homeaudio :tabs="tabs1" class="mt-4">
+    <template v-slot:tab1>
+        
+      <!-- Content for Tab 1 -->
+      <v-row :class="$vuetify.breakpoint.smAndDown ? 'justify-center align-center d-flex flex-column' : 'd-flex justify-center align-center'">
+        <template v-for="(form, index) in forms7">
+          <v-hover :key="index" class="">
+            <template v-slot:default="{ hover }">
+              <a :href="form.link" target="_blank" class="link-no-underline">
+                <v-card
+                  :class="[hover ? 'hovered-card' : '', $vuetify.breakpoint.smAndDown ? 'my-4 mx-auto mt-8' : 'mx-auto my-2 mt-8']"
+                >
+                  <v-col class="justify-center">
+                    <v-img
+                      contain
+                      cover
+                      height="250px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                      :src="form.imgs"
+                    />
+                  </v-col>
+                  <v-card-text class="d-flex flex-column text-center font-weight-bold">
+                    <h2 class="text-h5 black--text">
+                      {{ form.Name }}
+                    </h2>
+                  </v-card-text>
+                </v-card>
+              </a>
+            </template>
+          </v-hover>
+        </template>
+      </v-row>
+    </template>
+    <template v-slot:tab2>
+      <!-- Content for Tab 2 -->
+      <v-row :class="$vuetify.breakpoint.smAndDown ? 'justify-center align-center d-flex flex-column' : 'd-flex justify-center align-center'">
+        <template v-for="(form, index) in forms8">
+          <v-hover :key="index" class="">
+            <template v-slot:default="{ hover }">
+              <a :href="form.link" target="_blank" class="link-no-underline">
+                <v-card
+                  :class="[hover ? 'hovered-card' : '', $vuetify.breakpoint.smAndDown ? 'my-4 mx-auto mt-8' : 'mx-auto my-2 mt-8']"
+                >
+                  <v-col class="justify-center">
+                    <v-img
+                      contain
+                      cover
+                      height="250px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                      :src="form.imgs"
+                    />
+                  </v-col>
+                  <v-card-text class="d-flex flex-column text-center font-weight-bold">
+                    <h2 class="text-h5 black--text">
+                      {{ form.Name }}
+                    </h2>
+                  </v-card-text>
+                </v-card>
+              </a>
+            </template>
+          </v-hover>
+        </template>
+      </v-row>
+    </template>
+    </homeaudio>
   </div>
 </template>
 
@@ -236,6 +301,11 @@ export default {
         { title: 'Amps', slotName: 'tab4' },
         { title: 'Streamers', slotName: 'tab5' },
         { title: 'Systems', slotName: 'tab6' },
+        // Add more tab objects as needed
+      ],
+      tabs1: [
+        { title: 'DC Output', slotName: 'tab1' },
+        { title: 'Mains Output', slotName: 'tab2' },
         // Add more tab objects as needed
       ],
       forms: [
@@ -394,6 +464,55 @@ export default {
         imgs: "/images/Systems/aurora.jpg",
         Name: "Aurora",
         link: "https://3kshop.vn/ifi-aurora/"
+      },
+    ],
+    forms7: [
+      {
+        imgs: "/images/DCoutput/ipower2.jpg",
+        Name: "iPower2",
+        link: "https://3kshop.vn/ifi-ipower-2/"
+      },
+      {
+        imgs: "/images/DCoutput/ipowerx.jpg",
+        Name: "iPowerX",
+        link: "https://3kshop.vn/ifi-ipower-x/"
+      },
+      {
+        imgs: "/images/DCoutput/dcipuri.png",
+        Name: "DC iPurifier 2",
+        link: "https://3kshop.vn/ifi-dc-ipurifier-2/"
+      },
+      {
+        imgs: "/images/DCoutput/ipowerelite.jpg",
+        Name: "iPower Elite",
+        link: "https://3kshop.vn/ifi-ipower-elite/"
+      },
+    ],
+    forms8: [
+      {
+        imgs: "/images/Mainsoutput/dcblocker.jpeg",
+        Name: "DC Blocker",
+        link: "https://3kshop.vn/ifi-dc-blocker/"
+      },
+      {
+        imgs: "/images/Mainsoutput/gnddefender.jpeg",
+        Name: "GND Defender",
+        link: "https://3kshop.vn/ifi-gnd-defender/"
+      },
+      {
+        imgs: "/images/Mainsoutput/acipuri.jpg",
+        Name: "AC iPurifier",
+        link: "https://3kshop.vn/ifi-ac-ipurifier/"
+      },
+      {
+        imgs: "/images/Mainsoutput/powerstation.jpg",
+        Name: "Power Station",
+        link: "https://3kshop.vn/ifi-power-station/"
+      },
+      {
+        imgs: "/images/Mainsoutput/aurora.jpg",
+        Name: "DC Blocker",
+        link: "https://3kshop.vn/ifi-dc-blocker/"
       },
     ]
     };

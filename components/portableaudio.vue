@@ -21,7 +21,7 @@
     </div>
     <v-row :class="$vuetify.breakpoint.smAndDown ? 'justify-center align-center d-flex flex-column' : 'd-flex justify-center align-center'">
         <template v-for="(form, index) in forms">
-          <v-hover :key="index" class="">
+          <v-hover :key="index">
             <template v-slot:default="{ hover }">
               <a :href="form.link" target="_blank" class="link-no-underline">
                 <v-card
