@@ -13,31 +13,33 @@
     </v-tab-item>
   </v-tabs>
 </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        activeTab: 0,
-      };
-    },
-    props: ['tabs'],
-  };
-  </script>
-  
-  <style scoped>
-  /* Add custom styles for the Tab UI component */
-  
-  @media (max-width: 600px) {
-    .responsive-tabs {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    
-    .v-tab {
-      flex-basis: 100%;
-      text-align: center;
-      margin-bottom: 8px; /* Add spacing between tab items */
-    }
+
+<script>
+export default {
+  data() {
+    return {
+      activeTab: 0,
+    };
+  },
+  props: ["tabs"],
+};
+</script>
+
+<style scoped>
+/* Add custom styles for the Tab UI component */
+
+@media (max-width: 600px) {
+  .responsive-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
-  </style>
+
+  .v-tab {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 8px; /* Add spacing between tab items */
+  }
+}
+</style>
