@@ -6,7 +6,7 @@
       </v-skeleton-loader>
     </div>
     <div v-else>
-      <v-sheet class="pb-4 pt-16" color="white">
+      <v-sheet class="pb-4" color="white">
         <div
           data-aos="zoom-down"
           data-aos-easing="linear"
@@ -15,13 +15,13 @@
           class="font-weight-bold"
           :class="
             $vuetify.breakpoint.smAndDown
-              ? 'text-h5 mt-16 text-center'
-              : 'text-h4 text-center mt-16 ml-8'
+              ? 'text-h5 text-center'
+              : 'text-h4 text-center ml-8'
           "
         >
           Home Audio
         </div>
-        <homeaudio :tabs="tabs" class="mt-4">
+        <homeaudio :tabs="tabs" class="mt-2">
           <template v-slot:tab1>
             <!-- Content for Tab 1 -->
             <v-row
@@ -39,8 +39,8 @@
                         :class="[
                           hover ? 'hovered-card' : '',
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-8'
-                            : 'mx-auto my-2 mt-8',
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
                         ]"
                       >
                         <v-col class="justify-center">
@@ -83,8 +83,8 @@
                         :class="[
                           hover ? 'hovered-card' : '',
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-8'
-                            : 'mx-auto my-2 mt-8',
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
                         ]"
                       >
                         <v-col class="justify-center">
@@ -127,8 +127,8 @@
                         :class="[
                           hover ? 'hovered-card' : '',
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-8'
-                            : 'mx-auto my-2 mt-8',
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
                         ]"
                       >
                         <v-col class="justify-center">
@@ -171,8 +171,8 @@
                         :class="[
                           hover ? 'hovered-card' : '',
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-8'
-                            : 'mx-auto my-2 mt-8',
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
                         ]"
                       >
                         <v-col class="justify-center">
@@ -215,8 +215,8 @@
                         :class="[
                           hover ? 'hovered-card' : '',
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-8'
-                            : 'mx-auto my-2 mt-8',
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
                         ]"
                       >
                         <v-col class="justify-center">
@@ -259,8 +259,8 @@
                         :class="[
                           hover ? 'hovered-card' : '',
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-8'
-                            : 'mx-auto my-2 mt-8',
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
                         ]"
                       >
                         <v-col class="justify-center">
@@ -291,7 +291,7 @@
       </v-sheet>
     </div>
     <portableaudio></portableaudio>
-    <homeaudio :tabs="tabs1" class="mt-4">
+    <homeaudio :tabs="tabs1" class="mt-2">
       <template v-slot:tab1>
         <!-- Content for Tab 1 -->
         <v-row
@@ -309,8 +309,8 @@
                     :class="[
                       hover ? 'hovered-card' : '',
                       $vuetify.breakpoint.smAndDown
-                        ? 'my-4 mx-auto mt-8'
-                        : 'mx-auto my-2 mt-8',
+                        ? 'my-4 mx-auto mt-2'
+                        : 'mx-auto my-2 mt-2',
                     ]"
                   >
                     <v-col class="justify-center">
@@ -351,8 +351,8 @@
                     :class="[
                       hover ? 'hovered-card' : '',
                       $vuetify.breakpoint.smAndDown
-                        ? 'my-4 mx-auto mt-8'
-                        : 'mx-auto my-2 mt-8',
+                        ? 'my-4 mx-auto mt-2'
+                        : 'mx-auto my-2 mt-2',
                     ]"
                   >
                     <v-col class="justify-center">
