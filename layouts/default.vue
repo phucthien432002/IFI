@@ -87,17 +87,19 @@
       <div id="slider">
         <div class="list">
           <div class="item active">
-            <div class="slogan-placeholder">
-              <h1>Welcome to iFi audio</h1>
-              <span
-                >We passionately believe that everyone deserves the best when it comes to
-                sound. Our products are made to high technological standards to give you
-                an authentic, passionate and empowering music experience. Hear it. Feel
-                it.</span
-              >
-              <a class="take-tour-button">Take a tour</a>
+            <div class="img-placeholder" style="position: relative">
+              <div class="slogan-placeholder">
+                <h1>Welcome to iFi audio</h1>
+                <span
+                  >We passionately believe that everyone deserves the best when it comes
+                  to sound. Our products are made to high technological standards to give
+                  you an authentic, passionate and empowering music experience. Hear it.
+                  Feel it.</span
+                >
+                <a class="take-tour-button">Take a tour</a>
+              </div>
+              <img src="../static/images/Header/ifi-sig (2).png" alt="" />
             </div>
-            <img src="../static/images/Header/ifi-sig (2).png" alt="" />
           </div>
           <a class="item" href="https://3kshop.vn/ifi-lan-isilencer/" target="_blank">
             <div class="product-info new">
@@ -280,7 +282,136 @@
 		</v-app-bar> -->
       <Nuxt />
     </v-main>
-    <v-footer></v-footer>
+    <!-- <footer>
+      <div id="footer">
+        <div class="grid-container">
+          <div class="item-footer">
+            <h1>About iFi</h1>
+            <ul>
+              <li>
+                <a href="https://ifi-audio.com/about-" target="_blank"> About iFi</a>
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/home/ifi-blog/" target="_blank"> Blog</a>
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/careers/" target="_blank"> Careers</a>
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/about-partners/" target="_blank">
+                  Meet Our Partners</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="item-footer">
+            <h1>Products</h1>
+            <ul>
+              <li>
+                <a href="https://ifi-audio.com/home/legacy-products/" target="_blank">
+                  Legacy Products</a
+                >
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/home/refurbished-store/" target="_blank">
+                  Refurbished Store</a
+                >
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/about-retail/" target="_blank"> Retail</a>
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/about-student-discount/" target="_blank">
+                  Student Discount</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="item-footer">
+            <h1>Legal</h1>
+            <ul>
+              <li>
+                <a href="https://ifi-audio.com/cookies/" target="_blank"> Coockies</a>
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/about-privacy/" target="_blank">
+                  Privacy</a
+                >
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/sales-and-returns/" target="_blank">
+                  Sales and Returns</a
+                >
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/sustainability-policy/" target="_blank">
+                  Sustainability Policy</a
+                >
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/terms-and-conditions/" target="_blank">
+                  Terms and Conditions</a
+                >
+              </li>
+              <li>
+                <a href="https://ifi-audio.com/about-warranty/" target="_blank">
+                  Warranty</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="item-footer">
+            <h1>Social Media</h1>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/iFiaudio/" target="_blank"
+                  ><i class="fa-brands fa-facebook"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ifiaudio/" target="_blank"
+                  ><i class="fa-brands fa-instagram"></i> Instagram</a
+                >
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/amr-ifi-audio/" target="_blank"
+                  ><i class="fa-brands fa-linkedin"></i> Linkedin</a
+                >
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@official_ifiaudio" target="_blank"
+                  ><i class="fa-brands fa-tiktok"></i> Tiktok</a
+                >
+              </li>
+              <li>
+                <a href="https://twitter.com/ifiaudio" target="_blank"
+                  ><i class="fa-brands fa-twitter"></i> Twitter</a
+                >
+              </li>
+              <li>
+                <a href="https://www.youtube.com/c/iFiaudiochannel" target="_blank"
+                  ><i class="fa-brands fa-youtube"></i> Youtube</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy-right-container">
+          <span
+            >iFi audio is a division of Abbingdon Global Limited, registered in England
+            and Wales under the company registration number 06190130.</span
+          >
+          <span
+            >Registered office address: 79 Scarisbrick New Road, Southport, England, PR8
+            6LJ.</span
+          >
+          <span
+            >© 2023 <a href="">iFi audio</a> | Website by
+            <a href="">AnhHieuCaBayMau</a></span
+          >
+        </div>
+      </div>
+    </footer> -->
   </v-app>
 </template>
 
@@ -320,10 +451,13 @@ export default {
     };
 
     dots.forEach((li, key) => {
-      li.addEventListener("click", function () {
-        active = key;
-        reloadSlide();
-      });
+      li.addEventListener(
+        "click",
+        function () {
+          active = key;
+          reloadSlide.call(this);
+        }.bind(this)
+      );
     });
 
     function reloadSlide() {
@@ -527,6 +661,9 @@ main {
 
 #slider {
   overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
 .list {
@@ -651,7 +788,7 @@ main {
 .button-placeholder {
   position: absolute;
   top: 45%;
-  left: 2%;
+  margin: 0% 2%;
   width: 96%;
   display: flex;
   justify-content: space-between;
@@ -698,5 +835,172 @@ main {
 .dots li.active {
   width: 30px;
   background-color: #ff5c23;
+}
+footer {
+  background-color: #7e878e;
+  width: 100vw;
+  padding-top: 64px;
+  border-top: #ff5c23 solid 8px;
+  position: relative;
+  bottom: 0;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 0 12vw;
+}
+
+.item-footer {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-footer h1 {
+  margin-left: 10px;
+  color: white;
+}
+
+.item-footer li {
+  list-style-type: ">";
+  line-height: 32px;
+}
+
+.item-footer li a {
+  margin-left: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+  border-bottom: black solid 1px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer a:hover {
+  color: black;
+  transition: 0.3s;
+}
+
+.copy-right-container {
+  margin-top: 80px;
+  background-color: #717980;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy-right-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.dropbtn {
+  display: none;
+}
+
+#checkDropmenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-bar {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .logo-placeholder {
+    padding: 10px 50px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dropbtn {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .navigation-placeholder {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: 0s;
+    gap: 0;
+  }
+
+  .navigation-placeholder.show {
+    display: flex;
+    opacity: 1;
+  }
+
+  .navigation-placeholder .product-list,
+  .navigation-placeholder .tool-box,
+  .navigation-placeholder .support-box {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+
+  .navigation-placeholder .dropdown-menu {
+    position: unset;
+    width: 100%;
+    padding: 0;
+    opacity: 0;
+    box-shadow: none;
+    border-top: #ff5c23 solid 2px;
+    border-radius: 0;
+    height: 0;
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+
+  .navigation-placeholder .product-list:hover .dropdown-menu,
+  .navigation-placeholder .tool-box:hover .dropdown-menu,
+  .navigation-placeholder .support-box:hover .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .navigation-placeholder .product-list .dropdown-menu.active,
+  .navigation-placeholder .tool-box .dropdown-menu.active,
+  .navigation-placeholder .support-box .dropdown-menu.active {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+  }
+  .navigation-placeholder .dropdown-menu a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .navigation-placeholder .dropdown-menu a {
+    border-radius: 0;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
