@@ -6,7 +6,7 @@
       </v-skeleton-loader>
     </div>
     <div v-else>
-      <v-sheet class="pb-4 pt-16" color="white">
+      <v-sheet class="pb-4 pt-10" color="white">
         <div
           data-aos="zoom-down"
           data-aos-easing="linear"
@@ -16,7 +16,7 @@
           :class="
             $vuetify.breakpoint.smAndDown
               ? 'text-h5 mt-16 text-center'
-              : 'text-h4 text-center mt-16 ml-8'
+              : 'text-h4 text-center ml-8'
           "
         >
           Home Audio

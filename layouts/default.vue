@@ -199,7 +199,7 @@
           </a>
         </div>
         <div class="button-placeholder">
-          <button id="prev"><</button>
+          <button id="prev">&lt;</button>
           <button id="next">></button>
         </div>
         <ul class="dots">
@@ -219,70 +219,9 @@
       <div id="product"></div>
     </div>
     <v-main>
-      <!-- <v-app-bar
-			elevation="60"
-			elevate-on-scroll
-			:color="windowScroll ? 'white' : 'black'"
-			app
-			flat
-			clipped-left
-			class="d-flex justify-center"
-			height="80px"
-		>
-			<v-card
-				width="100vw"
-				height="80px"
-				class="d-flex align-center justify-space-around"
-				:color="windowScroll ? 'white' : 'black'"
-				:elevation="windowScroll ? 9 : 0"
-			>
-				<nuxt-link :to="('/')" class="d-flex align-center">
-					<v-img
-						height="100px"
-						width="160px"
-						contain
-						:src="(barColor === 'black' || windowScroll) ? '/logo-ploggvn-black.svg' : '/logo-ploggvn-white.svg'"
-						class="px-5"
-					/>
-				</nuxt-link>
-
-				<v-col class="d-md-none align-center justify-end d-flex">
-					<v-icon
-						:color="(barColor === 'black' || windowScroll) ? 'black' : 'black'"
-						class="pa-4"
-						size="32"
-						@click="drawer = true"
-					>
-						mdi-menu
-					</v-icon>
-				</v-col>
-
-				<div class="d-none align-center justify-space-around d-md-flex">
-					<v-hover v-for="(list, index) in lists" :key="index" v-slot="{ hover }">
-						<v-btn
-							:ripple="false"
-							text
-							plain
-							:href="list.link"
-							:to="(list.link)"
-							:color="hover ? 'cyan lighten-10' : (barColor === 'black' || windowScroll) ? 'black' : 'black'"
-							class="no-transition"
-						>
-							<div class="h7 font-weight-bold text-none">
-								{{ list.title }}
-							</div>
-						</v-btn>
-					</v-hover>
-				</div>
-
-				<div class="d-md-flex d-none justify-center align-center">
-					<kq-button-locale :color="(barColor === 'black' || windowScroll) ? 'black' : 'black'" />
-				</div>
-			</v-card>
-		</v-app-bar> -->
-      <Nuxt />
+      <Nuxt/>
     </v-main>
-    <!-- <footer>
+    <footer>
       <div id="footer">
         <div class="grid-container">
           <div class="item-footer">
@@ -411,7 +350,7 @@
           >
         </div>
       </div>
-    </footer> -->
+    </footer>
   </v-app>
 </template>
 
@@ -421,16 +360,14 @@ export default {
   // components: { slider },
   name: "DefaultLayout",
   mounted() {
-    const list = this.$el.querySelector("#slider .list");
-    const items = this.$el.querySelectorAll("#slider .list .item");
-    const dots = this.$el.querySelectorAll("#slider .dots li");
-    const prev = this.$el.querySelector("#prev");
-    const next = this.$el.querySelector("#next");
+    const list = this.$el.querySelector('#slider .list');
+    const items = this.$el.querySelectorAll('#slider .list .item');
+    const dots = this.$el.querySelectorAll('#slider .dots li');
+    const prev = this.$el.querySelector('#prev');
+    const next = this.$el.querySelector('#next');
     let active = 0;
     const countItem = items.length;
-    const autoRef = setInterval(() => {
-      next.click();
-    }, 5000);
+    const autoRef = setInterval(() => { next.click() }, 5000);
 
     next.onclick = function nextItem() {
       if (active + 1 >= countItem) {
@@ -451,6 +388,28 @@ export default {
     };
 
     dots.forEach((li, key) => {
+      li.addEventListener('click', function () {
+        active = key;
+        reloadSlide();
+      });
+    });
+
+    function reloadSlide() {
+      items.forEach((item, index) => {
+        if (index === active) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      const activeDot = document.querySelector('#slider .dots li.active');
+      activeDot.classList.remove('active');
+      dots[active].classList.add('active');
+    }
+
+
+    dots.forEach((li, key) => {
       li.addEventListener(
         "click",
         function () {
@@ -460,19 +419,19 @@ export default {
       );
     });
 
-    function reloadSlide() {
-      items.forEach((item, index) => {
-        if (index === active) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
-      });
+    // function reloadSlide() {
+    //   items.forEach((item, index) => {
+    //     if (index === active) {
+    //       item.classList.add("active");
+    //     } else {
+    //       item.classList.remove("active");
+    //     }
+    //   });
 
-      const activeDot = this.$el.querySelector("#slider .dots li.active");
-      activeDot.classList.remove("active");
-      dots[active].classList.add("active");
-    }
+    //   const activeDot = this.$el.querySelector("#slider .dots li.active");
+    //   activeDot.classList.remove("active");
+    //   dots[active].classList.add("active");
+    // }
 
     const proList = this.$el.querySelector(
       "#header .header-bar .navigation-placeholder .product-list"
@@ -537,10 +496,6 @@ export default {
 };
 </script>
 <style>
-body {
-  overflow-x: hidden;
-}
-
 #header {
   position: fixed;
   top: 0;
@@ -655,7 +610,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
   width: 100vw;
 }
 
@@ -664,6 +619,7 @@ main {
   height: 100vh;
   width: 100vw;
   position: relative;
+  overflow-y: hidden;
 }
 
 .list {
