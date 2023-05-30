@@ -419,19 +419,7 @@ export default {
       );
     });
 
-    // function reloadSlide() {
-    //   items.forEach((item, index) => {
-    //     if (index === active) {
-    //       item.classList.add("active");
-    //     } else {
-    //       item.classList.remove("active");
-    //     }
-    //   });
-
-    //   const activeDot = this.$el.querySelector("#slider .dots li.active");
-    //   activeDot.classList.remove("active");
-    //   dots[active].classList.add("active");
-    // }
+  
 
     const proList = this.$el.querySelector(
       "#header .header-bar .navigation-placeholder .product-list"
