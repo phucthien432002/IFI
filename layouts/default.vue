@@ -390,13 +390,10 @@ export default {
     };
 
     dots.forEach((li, key) => {
-      li.addEventListener(
-        "click",
-        function () {
-          active = key;
-          reloadSlide.call(this);
-        }.bind(this)
-      );
+      li.addEventListener("click", function () {
+        active = key;
+        reloadSlide();
+      });
     });
 
     function reloadSlide() {
@@ -408,10 +405,20 @@ export default {
         }
       });
 
-      const activeDot = this.$el.querySelector("#slider .dots li.active");
+      const activeDot = document.querySelector("#slider .dots li.active");
       activeDot.classList.remove("active");
       dots[active].classList.add("active");
     }
+
+    dots.forEach((li, key) => {
+      li.addEventListener(
+        "click",
+        function () {
+          active = key;
+          reloadSlide.call(this);
+        }.bind(this)
+      );
+    });
 
     const proList = this.$el.querySelector(
       "#header .header-bar .navigation-placeholder .product-list"
