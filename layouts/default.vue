@@ -219,7 +219,7 @@
       <div id="product"></div>
     </div>
     <v-main>
-      <Nuxt/>
+      <Nuxt />
     </v-main>
     <footer>
       <div id="footer">
