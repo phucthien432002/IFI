@@ -199,7 +199,7 @@
           </a>
         </div>
         <div class="button-placeholder">
-          <button id="prev"><</button>
+          <button id="prev">&lt;</button>
           <button id="next">></button>
         </div>
         <ul class="dots">
@@ -606,6 +606,7 @@ main {
   height: 100vh;
   width: 100vw;
   position: relative;
+  overflow-y: hidden;
 }
 
 .list {

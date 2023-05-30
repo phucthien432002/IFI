@@ -6,7 +6,7 @@
       </v-skeleton-loader>
     </div>
     <div v-else>
-      <v-sheet class="pb-4" color="white">
+      <v-sheet class="pb-4 pt-10" color="white">
         <div
           data-aos="zoom-down"
           data-aos-easing="linear"
