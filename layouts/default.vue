@@ -4,7 +4,7 @@
       <div id="header">
         <div class="header-bar">
           <div class="logo-placeholder">
-            <img class="logoimg1" src="/images/Header/iFi-logos_Simple.png" alt="" />
+            <img class="logoimg1" src="../static/images/logo/iFi-logos_Simple.png" alt="" />
             <div class="dropbtn">
               <i class="fa-solid fa-bars"></i>
             </div>
@@ -367,9 +367,9 @@ export default {
     const next = this.$el.querySelector("#next");
     let active = 0;
     const countItem = items.length;
-    const autoRef = setInterval(() => {
-      next.click();
-    }, 5000);
+    // const autoRef = setInterval(() => {
+    //   next.click();
+    // }, 5000);
 
     next.onclick = function nextItem() {
       if (active + 1 >= countItem) {
@@ -450,6 +450,8 @@ export default {
         proMenu.classList.remove("active");
       } else {
         proMenu.classList.add("active");
+        toolMenu.classList.remove("active");
+        supMenu.classList.remove("active");
       }
     };
 
@@ -457,7 +459,9 @@ export default {
       if (toolMenu.classList.contains("active")) {
         toolMenu.classList.remove("active");
       } else {
+        proMenu.classList.remove("active");
         toolMenu.classList.add("active");
+        supMenu.classList.remove("active");
       }
     };
 
@@ -465,6 +469,8 @@ export default {
       if (supMenu.classList.contains("active")) {
         supMenu.classList.remove("active");
       } else {
+        proMenu.classList.remove("active");
+        toolMenu.classList.remove("active");
         supMenu.classList.add("active");
       }
     };
@@ -494,7 +500,9 @@ export default {
   z-index: 10;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-
+::-webkit-scrollbar{
+  display: none;
+}
 .header-bar {
   width: 100%;
   padding: 10px 50px;
@@ -512,6 +520,7 @@ export default {
 .logo-placeholder img {
   object-fit: cover;
 }
+
 
 .navigation-placeholder {
   width: 90%;
@@ -641,7 +650,9 @@ main {
   max-width: 100vw;
   object-fit: cover;
 }
-
+.img-placeholder{
+  position: relative;
+}
 .list .item .slogan-placeholder {
   position: absolute;
   width: 50vw;
@@ -706,26 +717,26 @@ main {
 
 .list .item .sale::before {
   content: "Save";
-  border-radius: 20px;
-  width: 50px;
-  padding: 5px 10px;
-  font-size: 20px;
-  font-weight: 700;
-  background-color: #ff5c23;
-  color: white;
-  text-align: center;
+    border-radius: 50px;
+    padding: 3px 5px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #ff5c23;
+    color: white;
+    text-align: center;
+    width: 80px;
 }
 
 .list .item .new::before {
   content: "New";
-  border-radius: 20px;
-  width: 50px;
-  padding: 5px 10px;
-  font-size: 20px;
-  font-weight: 700;
-  background-color: #ff5c23;
-  color: white;
-  text-align: center;
+    border-radius: 50px;
+    padding: 3px 5px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #ff5c23;
+    color: white;
+    text-align: center;
+    width: 80px;
 }
 
 .button-placeholder {
@@ -883,7 +894,7 @@ footer a:hover {
     width: 100%;
     flex-direction: column;
     justify-content: space-evenly;
-    transition: 0s;
+    /* transition: 0s; */
     gap: 0;
   }
 
@@ -901,7 +912,7 @@ footer a:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: 0.5s;
+    /* transition: 0.5s; */
   }
 
   .navigation-placeholder .dropdown-menu {
@@ -915,6 +926,7 @@ footer a:hover {
     height: 0;
     margin-top: 10px;
     padding-top: 20px;
+    transition: 0s;
   }
 
   .navigation-placeholder .product-list:hover .dropdown-menu,
