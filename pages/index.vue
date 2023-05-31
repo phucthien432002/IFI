@@ -291,6 +291,18 @@
       </v-sheet>
     </div>
     <portableaudio></portableaudio>
+    <div
+      data-aos="zoom-down"
+      data-aos-easing="linear"
+      data-aos-duration="500"
+      data-aos-delay="1600"
+      class="font-weight-bold pt-10"
+      :class="
+        $vuetify.breakpoint.smAndDown ? 'text-h5 text-center' : 'text-h4 text-center ml-8'
+      "
+    >
+      Power
+    </div>
     <homeaudio :tabs="tabs1" class="mt-2">
       <template v-slot:tab1>
         <!-- Content for Tab 1 -->
@@ -377,10 +389,12 @@
         </v-row>
       </template>
     </homeaudio>
+    <enhencer></enhencer>
   </div>
 </template>
 
 <script>
+import Enhencer from "../components/enhencer.vue";
 import homeaudio from "../components/homeaudio.vue";
 import portableaudio from "../components/portableaudio.vue";
 
@@ -388,6 +402,7 @@ export default {
   components: {
     homeaudio,
     portableaudio,
+    Enhencer,
   },
   data() {
     return {

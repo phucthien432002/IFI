@@ -22,7 +22,9 @@ export default {
         integrity: 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==',
         crossorigin: 'anonymous',
         referrerpolicy: 'no-referrer'
-      }
+      },
+      {rel:'shortcut icon' ,type:'image/x-icon' ,href:'../static/images/logo/iFi-logo-big.ico'}
+
     ],
     script: [
       {

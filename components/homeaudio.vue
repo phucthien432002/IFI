@@ -4,7 +4,7 @@
       {{ tab.title }}
     </v-tab>
     <v-tab-item v-for="(tab, index) in tabs" :key="index">
-      <v-card flat>
+      <v-card>
         <v-card-text>
           <!-- Content for each tab -->
           <slot :name="tab.slotName"></slot>
