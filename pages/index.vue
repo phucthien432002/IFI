@@ -11,7 +11,7 @@
           data-aos="zoom-down"
           data-aos-easing="linear"
           data-aos-duration="500"
-          data-aos-delay="1600"
+          data-aos-delay="300"
           class="font-weight-bold"
           :class="
             $vuetify.breakpoint.smAndDown
@@ -295,7 +295,7 @@
       data-aos="zoom-down"
       data-aos-easing="linear"
       data-aos-duration="500"
-      data-aos-delay="1600"
+      data-aos-delay="300"
       class="font-weight-bold pt-10"
       :class="
         $vuetify.breakpoint.smAndDown ? 'text-h5 text-center' : 'text-h4 text-center ml-8'
@@ -390,10 +390,223 @@
       </template>
     </homeaudio>
     <enhencer></enhencer>
+    <div>
+      <div v-if="isLoading">
+        <v-skeleton-loader :transition="transition" type="card-avatar, actions">
+          <!-- Skeleton loader content -->
+        </v-skeleton-loader>
+      </div>
+      <div v-else>
+        <v-sheet class="pb-4 pt-10" color="white">
+          <div
+            data-aos="zoom-down"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+            data-aos-delay="300"
+            class="font-weight-bold"
+            :class="
+              $vuetify.breakpoint.smAndDown
+                ? 'text-h5 text-center'
+                : 'text-h4 text-center ml-8'
+            "
+          >
+            Cables
+          </div>
+          <homeaudio :tabs="tabs2" class="mt-2">
+            <template v-slot:tab1>
+              <!-- Content for Tab 1 -->
+              <v-row
+                :class="
+                  $vuetify.breakpoint.smAndDown
+                    ? 'justify-center align-center d-flex flex-column'
+                    : 'd-flex justify-center align-center'
+                "
+              >
+                <template v-for="(form, index) in forms9">
+                  <v-hover :key="index" class="">
+                    <template v-slot:default="{ hover }">
+                      <a :href="form.link" target="_blank" class="link-no-underline">
+                        <v-card
+                          :class="[
+                            hover ? 'hovered-card' : '',
+                            $vuetify.breakpoint.smAndDown
+                              ? 'my-4 mx-auto mt-2'
+                              : 'mx-auto my-2 mt-2',
+                          ]"
+                        >
+                          <v-col class="justify-center">
+                            <v-img
+                              contain
+                              cover
+                              height="250px"
+                              :max-width="
+                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                              "
+                              :src="form.imgs"
+                            />
+                          </v-col>
+                          <v-card-text
+                            class="d-flex flex-column text-center font-weight-bold"
+                          >
+                            <h2 class="text-h5 black--text">
+                              {{ form.Name }}
+                            </h2>
+                          </v-card-text>
+                        </v-card>
+                      </a>
+                    </template>
+                  </v-hover>
+                </template>
+              </v-row>
+            </template>
+            <template v-slot:tab2>
+              <!-- Content for Tab 2 -->
+              <v-row
+                :class="
+                  $vuetify.breakpoint.smAndDown
+                    ? 'justify-center align-center d-flex flex-column'
+                    : 'd-flex justify-center align-center'
+                "
+              >
+                <template v-for="(form, index) in forms10">
+                  <v-hover :key="index" class="">
+                    <template v-slot:default="{ hover }">
+                      <a :href="form.link" target="_blank" class="link-no-underline">
+                        <v-card
+                          :class="[
+                            hover ? 'hovered-card' : '',
+                            $vuetify.breakpoint.smAndDown
+                              ? 'my-4 mx-auto mt-2'
+                              : 'mx-auto my-2 mt-2',
+                          ]"
+                        >
+                          <v-col class="justify-center">
+                            <v-img
+                              contain
+                              cover
+                              height="250px"
+                              :max-width="
+                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                              "
+                              :src="form.imgs"
+                            />
+                          </v-col>
+                          <v-card-text
+                            class="d-flex flex-column text-center font-weight-bold"
+                          >
+                            <h2 class="text-h5 black--text">
+                              {{ form.Name }}
+                            </h2>
+                          </v-card-text>
+                        </v-card>
+                      </a>
+                    </template>
+                  </v-hover>
+                </template>
+              </v-row>
+            </template>
+            <template v-slot:tab3>
+              <!-- Content for Tab 2 -->
+              <v-row
+                :class="
+                  $vuetify.breakpoint.smAndDown
+                    ? 'justify-center align-center d-flex flex-column'
+                    : 'd-flex justify-center align-center'
+                "
+              >
+                <template v-for="(form, index) in forms11">
+                  <v-hover :key="index" class="">
+                    <template v-slot:default="{ hover }">
+                      <a :href="form.link" target="_blank" class="link-no-underline">
+                        <v-card
+                          :class="[
+                            hover ? 'hovered-card' : '',
+                            $vuetify.breakpoint.smAndDown
+                              ? 'my-4 mx-auto mt-2'
+                              : 'mx-auto my-2 mt-2',
+                          ]"
+                        >
+                          <v-col class="justify-center">
+                            <v-img
+                              contain
+                              cover
+                              height="250px"
+                              :max-width="
+                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                              "
+                              :src="form.imgs"
+                            />
+                          </v-col>
+                          <v-card-text
+                            class="d-flex flex-column text-center font-weight-bold"
+                          >
+                            <h2 class="text-h5 black--text">
+                              {{ form.Name }}
+                            </h2>
+                          </v-card-text>
+                        </v-card>
+                      </a>
+                    </template>
+                  </v-hover>
+                </template>
+              </v-row>
+            </template>
+            <template v-slot:tab4>
+              <!-- Content for Tab 2 -->
+              <v-row
+                :class="
+                  $vuetify.breakpoint.smAndDown
+                    ? 'justify-center align-center d-flex flex-column'
+                    : 'd-flex justify-center align-center'
+                "
+              >
+                <template v-for="(form, index) in forms12">
+                  <v-hover :key="index" class="">
+                    <template v-slot:default="{ hover }">
+                      <a :href="form.link" target="_blank" class="link-no-underline">
+                        <v-card
+                          :class="[
+                            hover ? 'hovered-card' : '',
+                            $vuetify.breakpoint.smAndDown
+                              ? 'my-4 mx-auto mt-2'
+                              : 'mx-auto my-2 mt-2',
+                          ]"
+                        >
+                          <v-col class="justify-center">
+                            <v-img
+                              contain
+                              cover
+                              height="250px"
+                              :max-width="
+                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                              "
+                              :src="form.imgs"
+                            />
+                          </v-col>
+                          <v-card-text
+                            class="d-flex flex-column text-center font-weight-bold"
+                          >
+                            <h2 class="text-h5 black--text">
+                              {{ form.Name }}
+                            </h2>
+                          </v-card-text>
+                        </v-card>
+                      </a>
+                    </template>
+                  </v-hover>
+                </template>
+              </v-row>
+            </template>
+          </homeaudio>
+        </v-sheet>
+      </div>
+    </div>
+    <accessories></accessories>
   </div>
 </template>
 
 <script>
+import Accessories from "../components/accessories.vue";
 import Enhencer from "../components/enhencer.vue";
 import homeaudio from "../components/homeaudio.vue";
 import portableaudio from "../components/portableaudio.vue";
@@ -403,6 +616,7 @@ export default {
     homeaudio,
     portableaudio,
     Enhencer,
+    Accessories,
   },
   data() {
     return {
@@ -419,6 +633,13 @@ export default {
       tabs1: [
         { title: "DC Output", slotName: "tab1" },
         { title: "Mains Output", slotName: "tab2" },
+        // Add more tab objects as needed
+      ],
+      tabs2: [
+        { title: "Audio", slotName: "tab1" },
+        { title: "Digital", slotName: "tab2" },
+        { title: "Power", slotName: "tab3" },
+        { title: "Adapters", slotName: "tab4" },
         // Add more tab objects as needed
       ],
       forms: [
@@ -627,6 +848,79 @@ export default {
           link: "https://3kshop.vn/ifi-dc-blocker/",
         },
       ],
+      forms9: [
+        {
+          imgs: "/images/Cable/4.4mmtoxlr.jpg",
+          Name: "4.4mm to XLR cable",
+          link: "https://3kshop.vn/ifi-4-4mm-to-xlr/",
+        },
+      ],
+      forms10: [
+        {
+          imgs: "/images/Cable/90degree.jpg",
+          Name: "90 Type-C OTG Cable",
+          link: "https://3kshop.vn/ifi-90-type-c-otg-cable/",
+        },
+        {
+          imgs: "/images/Cable/otgcable.png",
+          Name: "Type C OTG cable",
+          link: "https://3kshop.vn/ifi-type-c-otg/",
+        },
+        {
+          imgs: "/images/Cable/gemini3.0.jpg",
+          Name: "Gemini 3.0",
+          link: "https://3kshop.vn/ifi-gemini-3-0/",
+        },
+        {
+          imgs: "/images/Cable/mecury3.0.jpg",
+          Name: "Mecury 3.0",
+          link: "https://3kshop.vn/ifi-mercury-3-0/",
+        },
+      ],
+      forms11: [
+        {
+          imgs: "/images/Cable/groundhog.jpg",
+          Name: "Groundhog+",
+          link: "https://3kshop.vn/ifi-groundhog/",
+        },
+        {
+          imgs: "/images/Cable/nova.jpeg",
+          Name: "Nova",
+          link: "https://3kshop.vn/ifi-nova/",
+        },
+        {
+          imgs: "/images/Cable/supanova.jpg",
+          Name: "SupaNova",
+          link: "https://3kshop.vn/ifi-supanova/",
+        },
+      ],
+      forms12: [
+        {
+          imgs: "/images/Mainsoutput/dcblocker.jpeg",
+          Name: "DC Blocker",
+          link: "https://3kshop.vn/ifi-dc-blocker/",
+        },
+        {
+          imgs: "/images/Mainsoutput/gnddefender.jpeg",
+          Name: "GND Defender",
+          link: "https://3kshop.vn/ifi-gnd-defender/",
+        },
+        {
+          imgs: "/images/Mainsoutput/acipuri.jpg",
+          Name: "AC iPurifier",
+          link: "https://3kshop.vn/ifi-ac-ipurifier/",
+        },
+        {
+          imgs: "/images/Mainsoutput/powerstation.jpg",
+          Name: "Power Station",
+          link: "https://3kshop.vn/ifi-power-station/",
+        },
+        {
+          imgs: "/images/Mainsoutput/aurora.jpg",
+          Name: "DC Blocker",
+          link: "https://3kshop.vn/ifi-dc-blocker/",
+        },
+      ],
     };
   },
   mounted() {
@@ -650,7 +944,7 @@ export default {
   width: 100%;
   height: 100%;
   opacity: 0.5;
-  background-image: linear-gradient(rgba(177, 177, 177, 0.63),rgb(255,92,35));
+  background-image: linear-gradient(rgba(177, 177, 177, 0.63), rgb(255, 92, 35));
   filter: opacity(0.4);
   transition: opacity 0.3s;
 }
