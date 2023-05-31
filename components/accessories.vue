@@ -11,9 +11,10 @@
         data-aos-easing="linear"
         data-aos-duration="500"
         class="font-weight-bold"
+        style="color: #ff5c23"
         :class="
           $vuetify.breakpoint.smAndDown
-            ? 'text-h5 text-center'
+            ? 'text-h5 font-weight-bold text-center'
             : 'text-h4 text-center ml-8'
         "
       >
@@ -48,7 +49,7 @@
                     />
                   </v-col>
                   <v-card-text class="d-flex flex-column text-center font-weight-bold">
-                    <h2 class="text-h5 black--text">
+                    <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                       {{ form.Name }}
                     </h2>
                   </v-card-text>
