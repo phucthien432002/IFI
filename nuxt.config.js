@@ -23,14 +23,21 @@ export default {
         crossorigin: 'anonymous',
         referrerpolicy: 'no-referrer'
       },
-      {rel:'shortcut icon' ,type:'image/x-icon' ,href:'../static/images/logo/iFi-logo-big.ico'}
-
+      {rel:'shortcut icon' ,type:'image/x-icon' ,href:'../static/images/logo/iFi-logo-big.ico'},
+      {
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css?family=Poppins:300,500,700"
+			}
     ],
     script: [
       {
         src: 'https://kit.fontawesome.com/325c78919c.js',
         crossorigin: 'anonymous'
-      }
+      },
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" },
+			{
+				src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"
+			}
     ]
   },
 

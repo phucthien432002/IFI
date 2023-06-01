@@ -4,7 +4,11 @@
       <div id="header">
         <div class="header-bar">
           <div class="logo-placeholder">
-            <img class="logoimg1" src="../static/images/logo/iFi-logos_Simple.png" alt="" />
+            <img
+              class="logoimg1"
+              src="../static/images/logo/iFi-logos_Simple.png"
+              alt=""
+            />
             <div class="dropbtn">
               <i class="fa-solid fa-bars"></i>
             </div>
@@ -351,13 +355,15 @@
         </div>
       </div>
     </footer>
+    <scrollup />
   </v-app>
 </template>
 
 <script>
 // import slider from "../components/slider.vue";
+import scrollup from "../components/scrollup.vue";
 export default {
-  // components: { slider },
+  components: { scrollup },
   name: "DefaultLayout",
   mounted() {
     const list = this.$el.querySelector("#slider .list");
@@ -500,7 +506,7 @@ export default {
   z-index: 10;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }
 .header-bar {
@@ -520,7 +526,6 @@ export default {
 .logo-placeholder img {
   object-fit: cover;
 }
-
 
 .navigation-placeholder {
   width: 90%;
@@ -650,7 +655,7 @@ main {
   max-width: 100vw;
   object-fit: cover;
 }
-.img-placeholder{
+.img-placeholder {
   position: relative;
 }
 .list .item .slogan-placeholder {
@@ -717,26 +722,26 @@ main {
 
 .list .item .sale::before {
   content: "Save";
-    border-radius: 50px;
-    padding: 3px 5px;
-    font-size: 20px;
-    font-weight: 700;
-    background-color: #ff5c23;
-    color: white;
-    text-align: center;
-    width: 80px;
+  border-radius: 50px;
+  padding: 3px 5px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #ff5c23;
+  color: white;
+  text-align: center;
+  width: 80px;
 }
 
 .list .item .new::before {
   content: "New";
-    border-radius: 50px;
-    padding: 3px 5px;
-    font-size: 20px;
-    font-weight: 700;
-    background-color: #ff5c23;
-    color: white;
-    text-align: center;
-    width: 80px;
+  border-radius: 50px;
+  padding: 3px 5px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #ff5c23;
+  color: white;
+  text-align: center;
+  width: 80px;
 }
 
 .button-placeholder {
