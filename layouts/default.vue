@@ -963,4 +963,7 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 }
+.no-border {
+  border: none !important;
+}
 </style>

@@ -48,7 +48,9 @@
                       :src="form.imgs"
                     />
                   </v-col>
-                  <v-card-text class="d-flex flex-column text-center font-weight-bold">
+                  <v-card-text
+                    class="d-flex flex-column text-center font-weight-bold no-border"
+                  >
                     <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                       {{ form.Name }}
                     </h2>
