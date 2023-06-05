@@ -757,6 +757,8 @@ export default {
       isLoading: false,
       length: 3,
       showAll_1: false,
+      showAll_2: false,
+      showAll_3: false,
       tabs: [
         { title: "DACs", slotName: "tab1" },
         { title: "DAC/Amps", slotName: "tab2" },
