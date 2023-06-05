@@ -860,6 +860,7 @@ footer a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .copy-right-container a {
