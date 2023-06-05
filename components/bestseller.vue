@@ -26,7 +26,10 @@
           max-width="600px"
         >
           <div class="d-flex flex-column card-content">
-            <v-card-text class="font-weight-black text-h5 font-weight-bold" style="color: #ff5c23">
+            <v-card-text
+              class="font-weight-black text-h5 font-weight-bold no-border"
+              style="color: #ff5c23"
+            >
               {{ image.name }}
             </v-card-text>
             <v-spacer />

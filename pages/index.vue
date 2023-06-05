@@ -32,8 +32,8 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <template v-for="(form, index) in forms">
-                <v-hover :key="index" class="">
+              <div v-for="(form, index) in forms_1" :key="index">
+                <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
@@ -49,12 +49,12 @@
                             contain
                             cover
                             height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
                             :src="form.imgs"
                           />
                         </v-col>
                         <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold"
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
                           <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                             {{ form.Name }}
@@ -64,7 +64,50 @@
                     </a>
                   </template>
                 </v-hover>
-              </template>
+              </div>
+              <div v-for="(form, index) in displayedForms" :key="index">
+                <v-hover>
+                  <template v-slot:default="{ hover }">
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        :class="[
+                          hover ? 'hovered-card' : '',
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
+                        ]"
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            contain
+                            cover
+                            height="250px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
+                        >
+                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </v-hover>
+              </div>
+              <div v-if="!showAll">
+                <v-btn @click="displayMoreForms" color="primary" outlined block>
+                  Show More
+                </v-btn>
+              </div>
+              <div v-if="showAll">
+                <v-btn @click="displayLessForms" color="primary" outlined block>
+                  Show Less
+                </v-btn>
+              </div>
             </v-row>
           </template>
           <template v-slot:tab2>
@@ -76,8 +119,8 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <template v-for="(form, index) in forms2">
-                <v-hover :key="index" class="">
+              <div v-for="(form, index) in forms_2" :key="index">
+                <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
@@ -93,12 +136,12 @@
                             contain
                             cover
                             height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
                             :src="form.imgs"
                           />
                         </v-col>
                         <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold"
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
                           <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                             {{ form.Name }}
@@ -108,7 +151,50 @@
                     </a>
                   </template>
                 </v-hover>
-              </template>
+              </div>
+              <div v-for="(form, index) in displayedForms2" :key="index">
+                <v-hover>
+                  <template v-slot:default="{ hover }">
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        :class="[
+                          hover ? 'hovered-card' : '',
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
+                        ]"
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            contain
+                            cover
+                            height="250px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
+                        >
+                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </v-hover>
+              </div>
+              <div v-if="!showAll2">
+                <v-btn @click="displayMoreForms2" color="primary" outlined block>
+                  Show More
+                </v-btn>
+              </div>
+              <div v-if="showAll2">
+                <v-btn @click="displayLessForms2" color="primary" outlined block>
+                  Show Less
+                </v-btn>
+              </div>
             </v-row>
           </template>
           <template v-slot:tab3>
@@ -120,8 +206,8 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <template v-for="(form, index) in forms3">
-                <v-hover :key="index" class="">
+              <div v-for="(form, index) in forms_3" :key="index">
+                <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
@@ -137,12 +223,12 @@
                             contain
                             cover
                             height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
                             :src="form.imgs"
                           />
                         </v-col>
                         <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold"
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
                           <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                             {{ form.Name }}
@@ -152,7 +238,50 @@
                     </a>
                   </template>
                 </v-hover>
-              </template>
+              </div>
+              <div v-for="(form, index) in displayedForms3" :key="index">
+                <v-hover>
+                  <template v-slot:default="{ hover }">
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        :class="[
+                          hover ? 'hovered-card' : '',
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
+                        ]"
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            contain
+                            cover
+                            height="250px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
+                        >
+                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </v-hover>
+              </div>
+              <div v-if="!showAll3">
+                <v-btn @click="displayMoreForms3" color="primary" outlined block>
+                  Show More
+                </v-btn>
+              </div>
+              <div v-if="showAll3">
+                <v-btn @click="displayLessForms3" color="primary" outlined block>
+                  Show Less
+                </v-btn>
+              </div>
             </v-row>
           </template>
           <template v-slot:tab4>
@@ -186,7 +315,7 @@
                           />
                         </v-col>
                         <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold"
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
                           <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                             {{ form.Name }}
@@ -230,51 +359,7 @@
                           />
                         </v-col>
                         <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold"
-                        >
-                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                            {{ form.Name }}
-                          </h2>
-                        </v-card-text>
-                      </v-card>
-                    </a>
-                  </template>
-                </v-hover>
-              </template>
-            </v-row>
-          </template>
-          <template v-slot:tab6>
-            <!-- Content for Tab 2 -->
-            <v-row
-              :class="
-                $vuetify.breakpoint.smAndDown
-                  ? 'justify-center align-center d-flex flex-column'
-                  : 'd-flex justify-center align-center'
-              "
-            >
-              <template v-for="(form, index) in forms6">
-                <v-hover :key="index" class="">
-                  <template v-slot:default="{ hover }">
-                    <a :href="form.link" target="_blank" class="link-no-underline">
-                      <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
-                        ]"
-                      >
-                        <v-col class="justify-center">
-                          <v-img
-                            contain
-                            cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
-                            :src="form.imgs"
-                          />
-                        </v-col>
-                        <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold"
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
                           <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                             {{ form.Name }}
@@ -317,6 +402,50 @@
               : 'd-flex justify-center align-center'
           "
         >
+          <template v-for="(form, index) in forms6">
+            <v-hover :key="index" class="">
+              <template v-slot:default="{ hover }">
+                <a :href="form.link" target="_blank" class="link-no-underline">
+                  <v-card
+                    :class="[
+                      hover ? 'hovered-card' : '',
+                      $vuetify.breakpoint.smAndDown
+                        ? 'my-4 mx-auto mt-2'
+                        : 'mx-auto my-2 mt-2',
+                    ]"
+                  >
+                    <v-col class="justify-center">
+                      <v-img
+                        contain
+                        cover
+                        height="250px"
+                        :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                        :src="form.imgs"
+                      />
+                    </v-col>
+                    <v-card-text
+                      class="d-flex flex-column text-center font-weight-bold no-border"
+                    >
+                      <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                        {{ form.Name }}
+                      </h2>
+                    </v-card-text>
+                  </v-card>
+                </a>
+              </template>
+            </v-hover>
+          </template>
+        </v-row>
+      </template>
+      <template v-slot:tab2>
+        <!-- Content for Tab 2 -->
+        <v-row
+          :class="
+            $vuetify.breakpoint.smAndDown
+              ? 'justify-center align-center d-flex flex-column'
+              : 'd-flex justify-center align-center'
+          "
+        >
           <template v-for="(form, index) in forms7">
             <v-hover :key="index" class="">
               <template v-slot:default="{ hover }">
@@ -338,49 +467,9 @@
                         :src="form.imgs"
                       />
                     </v-col>
-                    <v-card-text class="d-flex flex-column text-center font-weight-bold">
-                      <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                        {{ form.Name }}
-                      </h2>
-                    </v-card-text>
-                  </v-card>
-                </a>
-              </template>
-            </v-hover>
-          </template>
-        </v-row>
-      </template>
-      <template v-slot:tab2>
-        <!-- Content for Tab 2 -->
-        <v-row
-          :class="
-            $vuetify.breakpoint.smAndDown
-              ? 'justify-center align-center d-flex flex-column'
-              : 'd-flex justify-center align-center'
-          "
-        >
-          <template v-for="(form, index) in forms8">
-            <v-hover :key="index" class="">
-              <template v-slot:default="{ hover }">
-                <a :href="form.link" target="_blank" class="link-no-underline">
-                  <v-card
-                    :class="[
-                      hover ? 'hovered-card' : '',
-                      $vuetify.breakpoint.smAndDown
-                        ? 'my-4 mx-auto mt-2'
-                        : 'mx-auto my-2 mt-2',
-                    ]"
-                  >
-                    <v-col class="justify-center">
-                      <v-img
-                        contain
-                        cover
-                        height="250px"
-                        :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
-                        :src="form.imgs"
-                      />
-                    </v-col>
-                    <v-card-text class="d-flex flex-column text-center font-weight-bold">
+                    <v-card-text
+                      class="d-flex flex-column text-center font-weight-bold no-border"
+                    >
                       <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                         {{ form.Name }}
                       </h2>
@@ -427,6 +516,52 @@
                     : 'd-flex justify-center align-center'
                 "
               >
+                <template v-for="(form, index) in forms8">
+                  <v-hover :key="index" class="">
+                    <template v-slot:default="{ hover }">
+                      <a :href="form.link" target="_blank" class="link-no-underline">
+                        <v-card
+                          :class="[
+                            hover ? 'hovered-card' : '',
+                            $vuetify.breakpoint.smAndDown
+                              ? 'my-4 mx-auto mt-2'
+                              : 'mx-auto my-2 mt-2',
+                          ]"
+                        >
+                          <v-col class="justify-center">
+                            <v-img
+                              contain
+                              cover
+                              height="250px"
+                              :max-width="
+                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                              "
+                              :src="form.imgs"
+                            />
+                          </v-col>
+                          <v-card-text
+                            class="d-flex flex-column text-center font-weight-bold no-border"
+                          >
+                            <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                              {{ form.Name }}
+                            </h2>
+                          </v-card-text>
+                        </v-card>
+                      </a>
+                    </template>
+                  </v-hover>
+                </template>
+              </v-row>
+            </template>
+            <template v-slot:tab2>
+              <!-- Content for Tab 2 -->
+              <v-row
+                :class="
+                  $vuetify.breakpoint.smAndDown
+                    ? 'justify-center align-center d-flex flex-column'
+                    : 'd-flex justify-center align-center'
+                "
+              >
                 <template v-for="(form, index) in forms9">
                   <v-hover :key="index" class="">
                     <template v-slot:default="{ hover }">
@@ -451,7 +586,7 @@
                             />
                           </v-col>
                           <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold"
+                            class="d-flex flex-column text-center font-weight-bold no-border"
                           >
                             <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                               {{ form.Name }}
@@ -464,7 +599,7 @@
                 </template>
               </v-row>
             </template>
-            <template v-slot:tab2>
+            <template v-slot:tab3>
               <!-- Content for Tab 2 -->
               <v-row
                 :class="
@@ -497,7 +632,7 @@
                             />
                           </v-col>
                           <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold"
+                            class="d-flex flex-column text-center font-weight-bold no-border"
                           >
                             <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                               {{ form.Name }}
@@ -510,7 +645,7 @@
                 </template>
               </v-row>
             </template>
-            <template v-slot:tab3>
+            <template v-slot:tab4>
               <!-- Content for Tab 2 -->
               <v-row
                 :class="
@@ -543,53 +678,7 @@
                             />
                           </v-col>
                           <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold"
-                          >
-                            <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                              {{ form.Name }}
-                            </h2>
-                          </v-card-text>
-                        </v-card>
-                      </a>
-                    </template>
-                  </v-hover>
-                </template>
-              </v-row>
-            </template>
-            <template v-slot:tab4>
-              <!-- Content for Tab 2 -->
-              <v-row
-                :class="
-                  $vuetify.breakpoint.smAndDown
-                    ? 'justify-center align-center d-flex flex-column'
-                    : 'd-flex justify-center align-center'
-                "
-              >
-                <template v-for="(form, index) in forms12">
-                  <v-hover :key="index" class="">
-                    <template v-slot:default="{ hover }">
-                      <a :href="form.link" target="_blank" class="link-no-underline">
-                        <v-card
-                          :class="[
-                            hover ? 'hovered-card' : '',
-                            $vuetify.breakpoint.smAndDown
-                              ? 'my-4 mx-auto mt-2'
-                              : 'mx-auto my-2 mt-2',
-                          ]"
-                        >
-                          <v-col class="justify-center">
-                            <v-img
-                              contain
-                              cover
-                              height="250px"
-                              :max-width="
-                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
-                              "
-                              :src="form.imgs"
-                            />
-                          </v-col>
-                          <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold"
+                            class="d-flex flex-column text-center font-weight-bold no-border"
                           >
                             <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                               {{ form.Name }}
@@ -623,16 +712,83 @@ export default {
     Enhencer,
     Accessories,
   },
+  methods: {
+    displayMoreForms() {
+      if (this.showAll) {
+        this.displayedForms = this.forms.slice(0, this.formsPerPage);
+      } else {
+        this.displayedForms = this.forms;
+      }
+      this.showAll = !this.showAll;
+    },
+    displayLessForms() {
+      this.displayedForms = this.forms.slice(0, this.formsPerPage);
+      this.showAll = false;
+    },
+    displayMoreForms2() {
+      if (this.showAll2) {
+        this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
+      } else {
+        this.displayedForms2 = this.forms2;
+      }
+      this.showAll2 = !this.showAll2;
+    },
+    displayLessForms2() {
+      this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
+      this.showAll2 = false;
+    },
+    displayMoreForms3() {
+      if (this.showAll3) {
+        this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+      } else {
+        this.displayedForms3 = this.forms3;
+      }
+      this.showAll3 = !this.showAll3;
+    },
+    displayLessForms3() {
+      this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+      this.showAll3 = false;
+    },
+  },
+  mounted() {
+    const storedForms = localStorage.getItem("displayedForms");
+    if (storedForms) {
+      this.displayedForms = JSON.parse(storedForms);
+    } else {
+      this.displayedForms = this.forms.slice(0, this.formsPerPage);
+    }
+
+    const storedForms2 = localStorage.getItem("displayedForms2");
+    if (storedForms2) {
+      this.displayedForms2 = JSON.parse(storedForms2);
+    } else {
+      this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
+    }
+
+    const storedForms3 = localStorage.getItem("displayedForms3");
+    if (storedForms3) {
+      this.displayedForms3 = JSON.parse(storedForms3);
+    } else {
+      this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+    }
+  },
   data() {
     return {
       isLoading: false,
+      displayedForms: [],
+      displayedForms2: [],
+      displayedForms3: [],
+      formsPerPage: 0,
+      showAll: false,
+      showAll1: false,
+      showAll2: false,
+      showAll3: false,
       tabs: [
         { title: "DACs", slotName: "tab1" },
         { title: "DAC/Amps", slotName: "tab2" },
-        { title: "DACs/Amp Bundles", slotName: "tab3" },
-        { title: "Amps", slotName: "tab4" },
-        { title: "Streamers", slotName: "tab5" },
-        { title: "Systems", slotName: "tab6" },
+        { title: "Amps", slotName: "tab3" },
+        { title: "Streamers", slotName: "tab4" },
+        { title: "Systems", slotName: "tab5" },
         // Add more tab objects as needed
       ],
       tabs1: [
@@ -647,7 +803,7 @@ export default {
         { title: "Adapters", slotName: "tab4" },
         // Add more tab objects as needed
       ],
-      forms: [
+      forms_1: [
         {
           imgs: "/images/DACs/uno.jpg",
           Name: "uno",
@@ -663,6 +819,8 @@ export default {
           Name: "Zen Air Blue",
           link: "https://3kshop.vn/ifi-zen-air-blue/",
         },
+      ],
+      forms: [
         {
           imgs: "/images/DACs/zendacv2.png",
           Name: "Zen DAC V2",
@@ -684,6 +842,18 @@ export default {
           link: "https://3kshop.vn/ifi-zen-one-signature/",
         },
       ],
+      forms_2: [
+        {
+          imgs: "/images/DAC-Amps/proidsdsig.jpg",
+          Name: "Pro iDSD Signature",
+          link: "https://3kshop.vn/ifi-pro-idsd-signature/",
+        },
+        {
+          imgs: "/images/DAC-Amps/neoidsdper.png",
+          Name: "NEO iDSD (PE)",
+          link: "https://3kshop.vn/ifi-neo-idsd-performance-edition/",
+        },
+      ],
       forms2: [
         {
           imgs: "/images/DAC-Amps/uno.jpg",
@@ -700,45 +870,25 @@ export default {
           Name: "iDSD Diablo",
           link: "https://3kshop.vn/ifi-idsd-diablo/",
         },
+      ],
+      forms_3: [
         {
-          imgs: "/images/DAC-Amps/neoidsdper.png",
-          Name: "NEO iDSD (Performance Edition)",
-          link: "https://3kshop.vn/ifi-neo-idsd-performance-edition/",
+          imgs: "/images/Amps/zenphono.jpg",
+          Name: "Zen Phono",
+          link: "https://3kshop.vn/ifi-zen-phono/",
         },
         {
-          imgs: "/images/DAC-Amps/proidsdsig.jpg",
-          Name: "Pro iDSD Signature",
-          link: "https://3kshop.vn/ifi-pro-idsd-signature/",
+          imgs: "/images/Amps/zencansig6xx.jpg",
+          Name: "Zen CAN Signature 6XX",
+          link: "https://3kshop.vn/ifi-zen-can-signature-6xx/",
+        },
+        {
+          imgs: "/images/Amps/zencansighfm.jpg",
+          Name: "Zen CAN Signature HFM",
+          link: "https://3kshop.vn/zen-can-signature-hfm/",
         },
       ],
       forms3: [
-        {
-          imgs: "/images/DAC-Amps/uno.jpg",
-          Name: "uno",
-          link: "https://3kshop.vn/ifi-uno/",
-        },
-        {
-          imgs: "/images/DAC-Amps/microidsd.jpg",
-          Name: "micro iDSD Signature",
-          link: "https://3kshop.vn/ifi-micro-idsd-signature/",
-        },
-        {
-          imgs: "/images/DAC-Amps/idsddiablo.jpg",
-          Name: "iDSD Diablo",
-          link: "https://3kshop.vn/ifi-idsd-diablo/",
-        },
-        {
-          imgs: "/images/DAC-Amps/neoidsdper.png",
-          Name: "NEO iDSD (Performance Edition)",
-          link: "https://3kshop.vn/ifi-neo-idsd-performance-edition/",
-        },
-        {
-          imgs: "/images/DAC-Amps/proidsdsig.jpg",
-          Name: "Pro iDSD Signature",
-          link: "https://3kshop.vn/ifi-pro-idsd-signature/",
-        },
-      ],
-      forms4: [
         {
           imgs: "/images/Amps/zenaircan.jpg",
           Name: "Zen Air CAN",
@@ -760,21 +910,6 @@ export default {
           link: "https://3kshop.vn/ifi-zen-phono/",
         },
         {
-          imgs: "/images/Amps/zencansig6xx.jpg",
-          Name: "Zen CAN Signature 6XX",
-          link: "https://3kshop.vn/ifi-zen-can-signature-6xx/",
-        },
-        {
-          imgs: "/images/Amps/zencansighfm.jpg",
-          Name: "Zen CAN Signature HFM",
-          link: "https://3kshop.vn/zen-can-signature-hfm/",
-        },
-        {
-          imgs: "/images/Amps/zenphono.jpg",
-          Name: "Zen Phono",
-          link: "https://3kshop.vn/ifi-zen-phono/",
-        },
-        {
           imgs: "/images/Amps/microiphono3.jpg",
           Name: "Micro iPhono 3 Black Label",
           link: "https://3kshop.vn/ifi-micro-iphono3-bl/",
@@ -785,7 +920,7 @@ export default {
           link: "https://3kshop.vn/ifi-pro-ican-signature/",
         },
       ],
-      forms5: [
+      forms4: [
         {
           imgs: "/images/Streams/zenstream.png",
           Name: "Zen Stream",
@@ -797,14 +932,14 @@ export default {
           link: "hhttps://3kshop.vn/ifi-neo-stream/",
         },
       ],
-      forms6: [
+      forms5: [
         {
           imgs: "/images/Systems/aurora.jpg",
           Name: "Aurora",
           link: "https://3kshop.vn/ifi-aurora/",
         },
       ],
-      forms7: [
+      forms6: [
         {
           imgs: "/images/DCoutput/ipower2.jpg",
           Name: "iPower2",
@@ -826,7 +961,7 @@ export default {
           link: "https://3kshop.vn/ifi-ipower-elite/",
         },
       ],
-      forms8: [
+      forms7: [
         {
           imgs: "/images/Mainsoutput/dcblocker.jpeg",
           Name: "DC Blocker",
@@ -847,20 +982,15 @@ export default {
           Name: "Power Station",
           link: "https://3kshop.vn/ifi-power-station/",
         },
-        {
-          imgs: "/images/Mainsoutput/aurora.jpg",
-          Name: "DC Blocker",
-          link: "https://3kshop.vn/ifi-dc-blocker/",
-        },
       ],
-      forms9: [
+      forms8: [
         {
           imgs: "/images/Cable/4.4mmtoxlr.jpg",
           Name: "4.4mm to XLR cable",
           link: "https://3kshop.vn/ifi-4-4mm-to-xlr/",
         },
       ],
-      forms10: [
+      forms9: [
         {
           imgs: "/images/Cable/90degree.jpg",
           Name: "90 Type-C OTG Cable",
@@ -882,7 +1012,7 @@ export default {
           link: "https://3kshop.vn/ifi-mercury-3-0/",
         },
       ],
-      forms11: [
+      forms10: [
         {
           imgs: "/images/Cable/groundhog.jpg",
           Name: "Groundhog+",
@@ -899,7 +1029,7 @@ export default {
           link: "https://3kshop.vn/ifi-supanova/",
         },
       ],
-      forms12: [
+      forms11: [
         {
           imgs: "/images/Mainsoutput/dcblocker.jpeg",
           Name: "DC Blocker",
@@ -919,11 +1049,6 @@ export default {
           imgs: "/images/Mainsoutput/powerstation.jpg",
           Name: "Power Station",
           link: "https://3kshop.vn/ifi-power-station/",
-        },
-        {
-          imgs: "/images/Mainsoutput/aurora.jpg",
-          Name: "DC Blocker",
-          link: "https://3kshop.vn/ifi-dc-blocker/",
         },
       ],
     };

@@ -27,8 +27,8 @@
             : 'd-flex justify-center align-center'
         "
       >
-        <template v-for="(form, index) in forms">
-          <v-hover :key="index">
+        <div v-for="(form, index) in forms_portable" :key="index">
+          <v-hover>
             <template v-slot:default="{ hover }">
               <a :href="form.link" target="_blank" class="link-no-underline">
                 <v-card
@@ -44,11 +44,13 @@
                       contain
                       cover
                       height="250px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
                       :src="form.imgs"
                     />
                   </v-col>
-                  <v-card-text class="d-flex flex-column text-center font-weight-bold">
+                  <v-card-text
+                    class="d-flex flex-column text-center font-weight-bold no-border"
+                  >
                     <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
                       {{ form.Name }}
                     </h2>
@@ -57,7 +59,50 @@
               </a>
             </template>
           </v-hover>
-        </template>
+        </div>
+        <div v-for="(form, index) in displayedForms_portable" :key="index">
+          <v-hover>
+            <template v-slot:default="{ hover }">
+              <a :href="form.link" target="_blank" class="link-no-underline">
+                <v-card
+                  :class="[
+                    hover ? 'hovered-card' : '',
+                    $vuetify.breakpoint.smAndDown
+                      ? 'my-4 mx-auto mt-2'
+                      : 'mx-auto my-2 mt-2',
+                  ]"
+                >
+                  <v-col class="justify-center">
+                    <v-img
+                      contain
+                      cover
+                      height="250px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                      :src="form.imgs"
+                    />
+                  </v-col>
+                  <v-card-text
+                    class="d-flex flex-column text-center font-weight-bold no-border"
+                  >
+                    <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                      {{ form.Name }}
+                    </h2>
+                  </v-card-text>
+                </v-card>
+              </a>
+            </template>
+          </v-hover>
+        </div>
+        <div v-if="!showAll_portable">
+          <v-btn @click="displayMoreForms_portable" color="primary" outlined block>
+            Show More
+          </v-btn>
+        </div>
+        <div v-if="showAll_portable">
+          <v-btn @click="displayLessForms_portable" color="primary" outlined block>
+            Show Less
+          </v-btn>
+        </div>
       </v-row>
     </div>
   </div>
@@ -68,7 +113,10 @@ export default {
   data() {
     return {
       isLoading: false,
-      forms: [
+      displayedForms_portable: [],
+      showAll_portable: false,
+      formsPerPage: 0,
+      forms_portable: [
         {
           imgs: "/images/PortableAudio/golink.png",
           Name: "GO Link",
@@ -84,6 +132,8 @@ export default {
           Name: "GO Pod",
           link: "https://3kshop.vn/ifi-go-pod/",
         },
+      ],
+      forms: [
         {
           imgs: "/images/PortableAudio/gobar.jpg",
           Name: "Go Bar",
@@ -122,7 +172,28 @@ export default {
       ],
     };
   },
+  methods: {
+    displayMoreForms_portable() {
+      if (this.showAll_portable) {
+        this.displayedForms_portable = this.forms.slice(0, this.formsPerPage);
+      } else {
+        this.displayedForms_portable = this.forms;
+      }
+      this.showAll_portable = !this.showAll_portable;
+    },
+    displayLessForms_portable() {
+      this.displayedForms_portable = this.forms.slice(0, this.formsPerPage);
+      this.showAll_portable = false;
+    },
+  },
   mounted() {
+    const storedForms_portable = localStorage.getItem("displayedForms_portable");
+    if (storedForms_portable) {
+      this.displayedForms_portable = JSON.parse(storedForms);
+    } else {
+      this.displayedForms_portable = this.forms.slice(0, this.formsPerPage);
+    }
+
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;

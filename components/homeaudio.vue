@@ -4,7 +4,7 @@
       {{ tab.title }}
     </v-tab>
     <v-tab-item v-for="(tab, index) in tabs" :key="index">
-      <v-card>
+      <v-card class="no-border">
         <v-card-text>
           <!-- Content for each tab -->
           <slot :name="tab.slotName"></slot>
@@ -30,16 +30,20 @@ export default {
 
 @media (max-width: 600px) {
   .responsive-tabs {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    border: none !important;
   }
 
   .v-tab {
     flex-basis: 100%;
     text-align: center;
     margin-bottom: 8px; /* Add spacing between tab items */
+    border: none !important;
+  }
+
+  .no-border {
+    border: none !important;
   }
 }
 </style>
