@@ -206,8 +206,8 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <template v-for="(form, index) in forms3">
-                <v-hover :key="index" class="">
+              <div v-for="(form, index) in forms_3" :key="index">
+                <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
@@ -223,7 +223,7 @@
                             contain
                             cover
                             height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
                             :src="form.imgs"
                           />
                         </v-col>
@@ -238,7 +238,50 @@
                     </a>
                   </template>
                 </v-hover>
-              </template>
+              </div>
+              <div v-for="(form, index) in displayedForms3" :key="index">
+                <v-hover>
+                  <template v-slot:default="{ hover }">
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        :class="[
+                          hover ? 'hovered-card' : '',
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2',
+                        ]"
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            contain
+                            cover
+                            height="250px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
+                        >
+                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </v-hover>
+              </div>
+              <div v-if="!showAll3">
+                <v-btn @click="displayMoreForms3" color="primary" outlined block>
+                  Show More
+                </v-btn>
+              </div>
+              <div v-if="showAll3">
+                <v-btn @click="displayLessForms3" color="primary" outlined block>
+                  Show Less
+                </v-btn>
+              </div>
             </v-row>
           </template>
           <template v-slot:tab4>
@@ -694,6 +737,18 @@ export default {
       this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
       this.showAll2 = false;
     },
+    displayMoreForms3() {
+      if (this.showAll3) {
+        this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+      } else {
+        this.displayedForms3 = this.forms3;
+      }
+      this.showAll3 = !this.showAll3;
+    },
+    displayLessForms3() {
+      this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+      this.showAll3 = false;
+    },
   },
   mounted() {
     const storedForms = localStorage.getItem("displayedForms");
@@ -709,16 +764,25 @@ export default {
     } else {
       this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
     }
+
+    const storedForms3 = localStorage.getItem("displayedForms3");
+    if (storedForms3) {
+      this.displayedForms3 = JSON.parse(storedForms3);
+    } else {
+      this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+    }
   },
   data() {
     return {
       isLoading: false,
       displayedForms: [],
       displayedForms2: [],
+      displayedForms3: [],
       formsPerPage: 0,
       showAll: false,
       showAll1: false,
       showAll2: false,
+      showAll3: false,
       tabs: [
         { title: "DACs", slotName: "tab1" },
         { title: "DAC/Amps", slotName: "tab2" },
@@ -807,6 +871,23 @@ export default {
           link: "https://3kshop.vn/ifi-idsd-diablo/",
         },
       ],
+      forms_3: [
+        {
+          imgs: "/images/Amps/zenphono.jpg",
+          Name: "Zen Phono",
+          link: "https://3kshop.vn/ifi-zen-phono/",
+        },
+        {
+          imgs: "/images/Amps/zencansig6xx.jpg",
+          Name: "Zen CAN Signature 6XX",
+          link: "https://3kshop.vn/ifi-zen-can-signature-6xx/",
+        },
+        {
+          imgs: "/images/Amps/zencansighfm.jpg",
+          Name: "Zen CAN Signature HFM",
+          link: "https://3kshop.vn/zen-can-signature-hfm/",
+        },
+      ],
       forms3: [
         {
           imgs: "/images/Amps/zenaircan.jpg",
@@ -822,21 +903,6 @@ export default {
           imgs: "/images/Amps/zencan.jpg",
           Name: "Zen CAN",
           link: "https://3kshop.vn/ifi-zen-can/",
-        },
-        {
-          imgs: "/images/Amps/zenphono.jpg",
-          Name: "Zen Phono",
-          link: "https://3kshop.vn/ifi-zen-phono/",
-        },
-        {
-          imgs: "/images/Amps/zencansig6xx.jpg",
-          Name: "Zen CAN Signature 6XX",
-          link: "https://3kshop.vn/ifi-zen-can-signature-6xx/",
-        },
-        {
-          imgs: "/images/Amps/zencansighfm.jpg",
-          Name: "Zen CAN Signature HFM",
-          link: "https://3kshop.vn/zen-can-signature-hfm/",
         },
         {
           imgs: "/images/Amps/zenphono.jpg",
