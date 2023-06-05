@@ -8,8 +8,6 @@
     <div v-else>
       <div
         data-aos="zoom-down"
-        data-aos-easing="linear"
-        data-aos-duration="500"
         class="font-weight-bold"
         style="color: #ff5c23"
         :class="
@@ -98,7 +96,7 @@ export default {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-    }, 1000);
+    }, 500);
   },
 };
 </script>

@@ -7,9 +7,6 @@
     </div>
     <div v-else>
       <div
-        data-aos="zoom-down"
-        data-aos-easing="linear"
-        data-aos-duration="500"
         class="font-weight-bold"
         style="color: #ff5c23"
         :class="
@@ -27,7 +24,7 @@
             : 'd-flex justify-center align-center'
         "
       >
-        <div v-for="(form, index) in forms_portable" :key="index">
+        <div v-for="form in forms_portable" :key="form.link">
           <v-hover>
             <template v-slot:default="{ hover }">
               <a :href="form.link" target="_blank" class="link-no-underline">
@@ -60,7 +57,7 @@
             </template>
           </v-hover>
         </div>
-        <div v-for="(form, index) in displayedForms_portable" :key="index">
+        <div v-for="form in displayedForms_portable" :key="form.link">
           <v-hover>
             <template v-slot:default="{ hover }">
               <a :href="form.link" target="_blank" class="link-no-underline">
@@ -93,15 +90,12 @@
             </template>
           </v-hover>
         </div>
-        <div v-if="!showAll_portable">
-          <v-btn @click="displayMoreForms_portable" color="primary" outlined block>
-            Show More
-          </v-btn>
-        </div>
-        <div v-if="showAll_portable">
-          <v-btn @click="displayLessForms_portable" color="primary" outlined block>
-            Show Less
-          </v-btn>
+        <div v-if="$vuetify.breakpoint.smAndDown">
+          <div>
+            <v-btn color="primary" outlined block @click="viewMore()">
+              {{ showAll_portable ? "Show Less" : "Show More" }}
+            </v-btn>
+          </div>
         </div>
       </v-row>
     </div>
@@ -113,10 +107,9 @@ export default {
   data() {
     return {
       isLoading: false,
-      displayedForms_portable: [],
+      length: 3,
       showAll_portable: false,
-      formsPerPage: 0,
-      forms_portable: [
+      forms: [
         {
           imgs: "/images/PortableAudio/golink.png",
           Name: "GO Link",
@@ -132,8 +125,6 @@ export default {
           Name: "GO Pod",
           link: "https://3kshop.vn/ifi-go-pod/",
         },
-      ],
-      forms: [
         {
           imgs: "/images/PortableAudio/gobar.jpg",
           Name: "Go Bar",
@@ -172,32 +163,32 @@ export default {
       ],
     };
   },
+  computed: {
+    forms_portable() {
+      return this.forms.slice(0, 3);
+    },
+    displayedForms_portable() {
+      return this.forms.slice(
+        3,
+        this.$vuetify.breakpoint.smAndDown ? this.length : this.forms.length
+      );
+    },
+  },
   methods: {
-    displayMoreForms_portable() {
-      if (this.showAll_portable) {
-        this.displayedForms_portable = this.forms.slice(0, this.formsPerPage);
+    viewMore() {
+      if (!this.showAll_portable) {
+        this.length = this.forms.length;
       } else {
-        this.displayedForms_portable = this.forms;
+        this.length = 3;
       }
       this.showAll_portable = !this.showAll_portable;
     },
-    displayLessForms_portable() {
-      this.displayedForms_portable = this.forms.slice(0, this.formsPerPage);
-      this.showAll_portable = false;
-    },
   },
   mounted() {
-    const storedForms_portable = localStorage.getItem("displayedForms_portable");
-    if (storedForms_portable) {
-      this.displayedForms_portable = JSON.parse(storedForms);
-    } else {
-      this.displayedForms_portable = this.forms.slice(0, this.formsPerPage);
-    }
-
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-    }, 1000);
+    }, 500);
   },
 };
 </script>
