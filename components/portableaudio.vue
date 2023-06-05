@@ -93,12 +93,12 @@
             </template>
           </v-hover>
         </div>
-        <div v-if="!showAll">
+        <div v-if="!showAll_portable">
           <v-btn @click="displayMoreForms_portable" color="primary" outlined block>
             Show More
           </v-btn>
         </div>
-        <div v-if="showAll">
+        <div v-if="showAll_portable">
           <v-btn @click="displayLessForms_portable" color="primary" outlined block>
             Show Less
           </v-btn>
