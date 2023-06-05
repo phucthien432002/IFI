@@ -8,10 +8,6 @@
     <div v-else>
       <v-sheet class="pb-4 pt-10" color="white">
         <div
-          data-aos="zoom-down"
-          data-aos-easing="linear"
-          data-aos-duration="500"
-          data-aos-delay="300"
           class="font-weight-bold"
           style="color: #ff5c23"
           :class="
@@ -32,7 +28,7 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <div v-for="(form, index) in forms_1" :key="index">
+              <div v-for="form in forms_1" :key="form.link">
                 <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
@@ -65,7 +61,7 @@
                   </template>
                 </v-hover>
               </div>
-              <div v-for="(form, index) in displayedForms" :key="index">
+              <div v-for="form in displayedForms_1" :key="form.link">
                 <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
@@ -98,15 +94,12 @@
                   </template>
                 </v-hover>
               </div>
-              <div v-if="!showAll">
-                <v-btn @click="displayMoreForms" color="primary" outlined block>
-                  Show More
-                </v-btn>
-              </div>
-              <div v-if="showAll">
-                <v-btn @click="displayLessForms" color="primary" outlined block>
-                  Show Less
-                </v-btn>
+              <div v-if="$vuetify.breakpoint.smAndDown">
+                <div>
+                  <v-btn color="primary" outlined block @click="viewMore()">
+                    {{ showAll_1 ? "Show Less" : "Show More" }}
+                  </v-btn>
+                </div>
               </div>
             </v-row>
           </template>
@@ -119,7 +112,7 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <div v-for="(form, index) in forms_2" :key="index">
+              <div v-for="form in forms_2" :key="form.link">
                 <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
@@ -152,7 +145,7 @@
                   </template>
                 </v-hover>
               </div>
-              <div v-for="(form, index) in displayedForms2" :key="index">
+              <div v-for="form in displayedForms_2" :key="form.link">
                 <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
@@ -185,15 +178,12 @@
                   </template>
                 </v-hover>
               </div>
-              <div v-if="!showAll2">
-                <v-btn @click="displayMoreForms2" color="primary" outlined block>
-                  Show More
-                </v-btn>
-              </div>
-              <div v-if="showAll2">
-                <v-btn @click="displayLessForms2" color="primary" outlined block>
-                  Show Less
-                </v-btn>
+              <div v-if="$vuetify.breakpoint.smAndDown">
+                <div>
+                  <v-btn color="primary" outlined block @click="viewMore2()">
+                    {{ showAll_2 ? "Show Less" : "Show More" }}
+                  </v-btn>
+                </div>
               </div>
             </v-row>
           </template>
@@ -206,7 +196,7 @@
                   : 'd-flex justify-center align-center'
               "
             >
-              <div v-for="(form, index) in forms_3" :key="index">
+              <div v-for="form in forms_3" :key="form.link">
                 <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
@@ -239,7 +229,7 @@
                   </template>
                 </v-hover>
               </div>
-              <div v-for="(form, index) in displayedForms3" :key="index">
+              <div v-for="form in displayedForms_3" :key="form.link">
                 <v-hover>
                   <template v-slot:default="{ hover }">
                     <a :href="form.link" target="_blank" class="link-no-underline">
@@ -272,15 +262,12 @@
                   </template>
                 </v-hover>
               </div>
-              <div v-if="!showAll3">
-                <v-btn @click="displayMoreForms3" color="primary" outlined block>
-                  Show More
-                </v-btn>
-              </div>
-              <div v-if="showAll3">
-                <v-btn @click="displayLessForms3" color="primary" outlined block>
-                  Show Less
-                </v-btn>
+              <div v-if="$vuetify.breakpoint.smAndDown">
+                <div>
+                  <v-btn color="primary" outlined block @click="viewMore3()">
+                    {{ showAll_3 ? "Show Less" : "Show More" }}
+                  </v-btn>
+                </div>
               </div>
             </v-row>
           </template>
@@ -378,10 +365,6 @@
     </div>
     <portableaudio></portableaudio>
     <div
-      data-aos="zoom-down"
-      data-aos-easing="linear"
-      data-aos-duration="500"
-      data-aos-delay="300"
       class="font-weight-bold pt-10"
       style="color: #ff5c23"
       :class="
@@ -492,10 +475,6 @@
       <div v-else>
         <v-sheet class="pb-4 pt-10" color="white">
           <div
-            data-aos="zoom-down"
-            data-aos-easing="linear"
-            data-aos-duration="500"
-            data-aos-delay="300"
             class="font-weight-bold"
             style="color: #ff5c23"
             :class="
@@ -712,77 +691,74 @@ export default {
     Enhencer,
     Accessories,
   },
+  computed: {
+    forms_1() {
+      return this.forms.slice(0, 3);
+    },
+    displayedForms_1() {
+      return this.forms.slice(
+        3,
+        this.$vuetify.breakpoint.smAndDown ? this.length : this.forms.length
+      );
+    },
+    forms_2() {
+      return this.forms2.slice(0, 3);
+    },
+    displayedForms_2() {
+      return this.forms2.slice(
+        3,
+        this.$vuetify.breakpoint.smAndDown ? this.length : this.forms2.length
+      );
+    },
+    forms_3() {
+      return this.forms3.slice(0, 3);
+    },
+    displayedForms_3() {
+      return this.forms3.slice(
+        3,
+        this.$vuetify.breakpoint.smAndDown ? this.length : this.forms3.length
+      );
+    },
+  },
   methods: {
-    displayMoreForms() {
-      if (this.showAll) {
-        this.displayedForms = this.forms.slice(0, this.formsPerPage);
+    viewMore() {
+      if (!this.showAll_1) {
+        this.length = this.forms.length;
       } else {
-        this.displayedForms = this.forms;
+        this.length = 3;
       }
-      this.showAll = !this.showAll;
+      this.showAll_1 = !this.showAll_1;
     },
-    displayLessForms() {
-      this.displayedForms = this.forms.slice(0, this.formsPerPage);
-      this.showAll = false;
-    },
-    displayMoreForms2() {
-      if (this.showAll2) {
-        this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
+    viewMore2() {
+      if (!this.showAll_2) {
+        this.length = this.forms2.length;
       } else {
-        this.displayedForms2 = this.forms2;
+        this.length = 3;
       }
-      this.showAll2 = !this.showAll2;
+      this.showAll_2 = !this.showAll_2;
     },
-    displayLessForms2() {
-      this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
-      this.showAll2 = false;
-    },
-    displayMoreForms3() {
-      if (this.showAll3) {
-        this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
+    viewMore3() {
+      if (!this.showAll_3) {
+        this.length = this.forms3.length;
       } else {
-        this.displayedForms3 = this.forms3;
+        this.length = 3;
       }
-      this.showAll3 = !this.showAll3;
-    },
-    displayLessForms3() {
-      this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
-      this.showAll3 = false;
+      this.showAll_3 = !this.showAll_3;
     },
   },
   mounted() {
-    const storedForms = localStorage.getItem("displayedForms");
-    if (storedForms) {
-      this.displayedForms = JSON.parse(storedForms);
-    } else {
-      this.displayedForms = this.forms.slice(0, this.formsPerPage);
-    }
-
-    const storedForms2 = localStorage.getItem("displayedForms2");
-    if (storedForms2) {
-      this.displayedForms2 = JSON.parse(storedForms2);
-    } else {
-      this.displayedForms2 = this.forms2.slice(0, this.formsPerPage);
-    }
-
-    const storedForms3 = localStorage.getItem("displayedForms3");
-    if (storedForms3) {
-      this.displayedForms3 = JSON.parse(storedForms3);
-    } else {
-      this.displayedForms3 = this.forms3.slice(0, this.formsPerPage);
-    }
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 500);
   },
   data() {
     return {
       isLoading: false,
-      displayedForms: [],
-      displayedForms2: [],
-      displayedForms3: [],
-      formsPerPage: 0,
-      showAll: false,
-      showAll1: false,
-      showAll2: false,
-      showAll3: false,
+      length: 3,
+      showAll_1: false,
+      showAll_2: false,
+      showAll_3: false,
       tabs: [
         { title: "DACs", slotName: "tab1" },
         { title: "DAC/Amps", slotName: "tab2" },
@@ -803,7 +779,7 @@ export default {
         { title: "Adapters", slotName: "tab4" },
         // Add more tab objects as needed
       ],
-      forms_1: [
+      forms: [
         {
           imgs: "/images/DACs/uno.jpg",
           Name: "uno",
@@ -819,8 +795,6 @@ export default {
           Name: "Zen Air Blue",
           link: "https://3kshop.vn/ifi-zen-air-blue/",
         },
-      ],
-      forms: [
         {
           imgs: "/images/DACs/zendacv2.png",
           Name: "Zen DAC V2",
@@ -842,7 +816,7 @@ export default {
           link: "https://3kshop.vn/ifi-zen-one-signature/",
         },
       ],
-      forms_2: [
+      forms2: [
         {
           imgs: "/images/DAC-Amps/proidsdsig.jpg",
           Name: "Pro iDSD Signature",
@@ -853,8 +827,6 @@ export default {
           Name: "NEO iDSD (PE)",
           link: "https://3kshop.vn/ifi-neo-idsd-performance-edition/",
         },
-      ],
-      forms2: [
         {
           imgs: "/images/DAC-Amps/uno.jpg",
           Name: "uno",
@@ -871,7 +843,7 @@ export default {
           link: "https://3kshop.vn/ifi-idsd-diablo/",
         },
       ],
-      forms_3: [
+      forms3: [
         {
           imgs: "/images/Amps/zenphono.jpg",
           Name: "Zen Phono",
@@ -887,8 +859,6 @@ export default {
           Name: "Zen CAN Signature HFM",
           link: "https://3kshop.vn/zen-can-signature-hfm/",
         },
-      ],
-      forms3: [
         {
           imgs: "/images/Amps/zenaircan.jpg",
           Name: "Zen Air CAN",
@@ -1057,7 +1027,7 @@ export default {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-    }, 1000);
+    }, 500);
   },
 };
 </script>

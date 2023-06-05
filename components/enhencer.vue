@@ -7,9 +7,6 @@
     </div>
     <div v-else>
       <div
-        data-aos="zoom-down"
-        data-aos-easing="linear"
-        data-aos-duration="500"
         class="font-weight-bold"
         style="color: #ff5c23"
         :class="
@@ -27,7 +24,7 @@
             : 'd-flex justify-center align-center'
         "
       >
-        <div v-for="(form, index) in forms_enhencer" :key="index">
+        <div v-for="form in forms_enhencer" :key="form.link">
           <v-hover>
             <template v-slot:default="{ hover }">
               <a :href="form.link" target="_blank" class="link-no-underline">
@@ -60,7 +57,7 @@
             </template>
           </v-hover>
         </div>
-        <div v-for="(form, index) in displayedForms_enhencer" :key="index">
+        <div v-for="form in displayedForms_enhencer" :key="form.link">
           <v-hover>
             <template v-slot:default="{ hover }">
               <a :href="form.link" target="_blank" class="link-no-underline">
@@ -93,15 +90,12 @@
             </template>
           </v-hover>
         </div>
-        <div v-if="!showAll_enhencer">
-          <v-btn @click="displayMoreForms_enhencer" color="primary" outlined block>
-            Show More
-          </v-btn>
-        </div>
-        <div v-if="showAll_enhencer">
-          <v-btn @click="displayLessForms_enhencer" color="primary" outlined block>
-            Show Less
-          </v-btn>
+        <div v-if="$vuetify.breakpoint.smAndDown">
+          <div>
+            <v-btn color="primary" outlined block @click="viewMore()">
+              {{ showAll_enhencer ? "Show Less" : "Show More" }}
+            </v-btn>
+          </div>
         </div>
       </v-row>
     </div>
@@ -113,10 +107,9 @@ export default {
   data() {
     return {
       isLoading: false,
-      displayedForms_enhencer: [],
+      length: 3,
       showAll_enhencer: false,
-      formsPerPage: 0,
-      forms_enhencer: [
+      forms: [
         {
           imgs: "/images/Enhencers/idefender.jpg",
           Name: "iDefender+",
@@ -132,8 +125,6 @@ export default {
           Name: "LAN iSilencer",
           link: "https://3kshop.vn/ifi-lan-isilencer/",
         },
-      ],
-      forms: [
         {
           imgs: "/images/Enhencers/ipurifier3.png",
           Name: "iPurifier 3",
@@ -147,32 +138,32 @@ export default {
       ],
     };
   },
+  computed: {
+    forms_enhencer() {
+      return this.forms.slice(0, 3);
+    },
+    displayedForms_enhencer() {
+      return this.forms.slice(
+        3,
+        this.$vuetify.breakpoint.smAndDown ? this.length : this.forms.length
+      );
+    },
+  },
   methods: {
-    displayMoreForms_enhencer() {
-      if (this.showAll_enhencer) {
-        this.displayedForms_enhencer = this.forms.slice(0, this.formsPerPage);
+    viewMore() {
+      if (!this.showAll_enhencer) {
+        this.length = this.forms.length;
       } else {
-        this.displayedForms_enhencer = this.forms;
+        this.length = 3;
       }
       this.showAll_enhencer = !this.showAll_enhencer;
     },
-    displayLessForms_enhencer() {
-      this.displayedForms_enhencer = this.forms.slice(0, this.formsPerPage);
-      this.showAll_enhencer = false;
-    },
   },
   mounted() {
-    const storedForms_enhencer = localStorage.getItem("displayedForms_enhencer");
-    if (storedForms_enhencer) {
-      this.displayedForms__enhencer = JSON.parse(storedForms);
-    } else {
-      this.displayedForms_enhencer = this.forms.slice(0, this.formsPerPage);
-    }
-
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-    }, 1000);
+    }, 500);
   },
 };
 </script>
