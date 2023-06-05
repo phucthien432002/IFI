@@ -8,7 +8,6 @@
     <div v-else>
       <v-sheet class="pb-4 pt-10" color="white">
         <div
-          data-aos="zoom-down"
           class="font-weight-bold"
           style="color: #ff5c23"
           :class="
@@ -366,7 +365,6 @@
     </div>
     <portableaudio></portableaudio>
     <div
-      data-aos="zoom-down"
       class="font-weight-bold pt-10"
       style="color: #ff5c23"
       :class="
@@ -477,7 +475,6 @@
       <div v-else>
         <v-sheet class="pb-4 pt-10" color="white">
           <div
-            data-aos="zoom-down"
             class="font-weight-bold"
             style="color: #ff5c23"
             :class="
