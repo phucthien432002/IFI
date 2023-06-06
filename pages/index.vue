@@ -1001,24 +1001,14 @@ export default {
       ],
       forms11: [
         {
-          imgs: "/images/Mainsoutput/dcblocker.jpeg",
-          Name: "DC Blocker",
-          link: "https://3kshop.vn/ifi-dc-blocker/",
+          imgs: "/images/Cable/iematchplus.jpg",
+          Name: "iEMatch+",
+          link: "https://3kshop.vn/ifi-iematch-plus/",
         },
         {
-          imgs: "/images/Mainsoutput/gnddefender.jpeg",
-          Name: "GND Defender",
-          link: "https://3kshop.vn/ifi-gnd-defender/",
-        },
-        {
-          imgs: "/images/Mainsoutput/acipuri.jpg",
-          Name: "AC iPurifier",
-          link: "https://3kshop.vn/ifi-ac-ipurifier/",
-        },
-        {
-          imgs: "/images/Mainsoutput/powerstation.jpg",
-          Name: "Power Station",
-          link: "https://3kshop.vn/ifi-power-station/",
+          imgs: "/images/Cable/iematch.jpg",
+          Name: "iEMatch",
+          link: "https://3kshop.vn/ifi-iematch/",
         },
       ],
     };
