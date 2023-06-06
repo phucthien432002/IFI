@@ -7,7 +7,6 @@
     </div>
     <div v-else>
       <div
-        data-aos="zoom-down"
         class="font-weight-bold"
         style="color: #ff5c23"
         :class="
