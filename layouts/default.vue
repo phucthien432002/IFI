@@ -274,7 +274,7 @@
             <h1>Legal</h1>
             <ul>
               <li>
-                <a href="https://ifi-audio.com/cookies/" target="_blank"> Coockies</a>
+                <a href="https://ifi-audio.com/cookies/" target="_blank"> Cookies</a>
               </li>
               <li>
                 <a href="https://ifi-audio.com/about-privacy/" target="_blank">
