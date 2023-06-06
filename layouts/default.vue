@@ -17,7 +17,7 @@
             <div class="product-list">
               <h3>Products</h3>
               <div class="dropdown-menu">
-                <a href="">Home audio</a>
+                <a @click="scrollTo('HomeAudioGoTo')">Home audio</a>
                 <a href="">Protable Audio</a>
                 <a href="">Power</a>
                 <a href="">Enhancers</a>
@@ -365,6 +365,17 @@ import scrollup from "../components/scrollup.vue";
 export default {
   components: { scrollup },
   name: "DefaultLayout",
+  methods: {
+    scrollTo(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.offsetHeight - 150,
+        });
+      }
+    },
+  },
   mounted() {
     const list = this.$el.querySelector("#slider .list");
     const items = this.$el.querySelectorAll("#slider .list .item");

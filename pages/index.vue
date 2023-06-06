@@ -6,14 +6,14 @@
       </v-skeleton-loader>
     </div>
     <div v-else>
-      <v-sheet class="pb-4 pt-10" color="white">
+      <v-sheet class="pb-4 pt-10" color="white" id="HomeAudioGoTo">
         <div
           class="font-weight-bold"
-          style="color: #ff5c23"
+          style="color: white; background-color: #ff5c23"
           :class="
             $vuetify.breakpoint.smAndDown
-              ? 'text-h5 font-weight-bold text-center'
-              : 'text-h4 text-center ml-8'
+              ? 'text-h5 font-weight-bold text-center py-6 py-6'
+              : 'text-h4 text-center py-6'
           "
         >
           Home Audio
@@ -29,23 +29,24 @@
               "
             >
               <div v-for="form in forms_1" :key="form.link">
-                <v-hover>
-                  <template v-slot:default="{ hover }">
+                <div>
+                  <template>
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                        class="carditems"
+                        :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
+                            class="itemsimg"
                             contain
                             cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
                             :src="form.imgs"
                           />
                         </v-col>
@@ -59,26 +60,27 @@
                       </v-card>
                     </a>
                   </template>
-                </v-hover>
+                </div>
               </div>
               <div v-for="form in displayedForms_1" :key="form.link">
-                <v-hover>
-                  <template v-slot:default="{ hover }">
+                <div>
+                  <template>
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                        class="carditems"
+                        :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
+                            class="itemsimg"
                             contain
                             cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
                             :src="form.imgs"
                           />
                         </v-col>
@@ -92,7 +94,7 @@
                       </v-card>
                     </a>
                   </template>
-                </v-hover>
+                </div>
               </div>
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <div>
@@ -113,70 +115,68 @@
               "
             >
               <div v-for="form in forms_2" :key="form.link">
-                <v-hover>
-                  <template v-slot:default="{ hover }">
-                    <a :href="form.link" target="_blank" class="link-no-underline">
-                      <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                <template>
+                  <a :href="form.link" target="_blank" class="link-no-underline">
+                    <v-card
+                      class="carditems"
+                      :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                      "
+                    >
+                      <v-col class="justify-center">
+                        <v-img
+                          class="itemsimg"
+                          contain
+                          cover
+                          height="200px"
+                          :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                          :src="form.imgs"
+                        />
+                      </v-col>
+                      <v-card-text
+                        class="d-flex flex-column text-center font-weight-bold no-border"
                       >
-                        <v-col class="justify-center">
-                          <v-img
-                            contain
-                            cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
-                            :src="form.imgs"
-                          />
-                        </v-col>
-                        <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold no-border"
-                        >
-                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                            {{ form.Name }}
-                          </h2>
-                        </v-card-text>
-                      </v-card>
-                    </a>
-                  </template>
-                </v-hover>
+                        <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                          {{ form.Name }}
+                        </h2>
+                      </v-card-text>
+                    </v-card>
+                  </a>
+                </template>
               </div>
               <div v-for="form in displayedForms_2" :key="form.link">
-                <v-hover>
-                  <template v-slot:default="{ hover }">
-                    <a :href="form.link" target="_blank" class="link-no-underline">
-                      <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                <template>
+                  <a :href="form.link" target="_blank" class="link-no-underline">
+                    <v-card
+                      class="carditems"
+                      :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                        "
+                    >
+                      <v-col class="justify-center">
+                        <v-img
+                          class="itemsimg"
+                          contain
+                          cover
+                          height="200px"
+                          :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                          :src="form.imgs"
+                        />
+                      </v-col>
+                      <v-card-text
+                        class="d-flex flex-column text-center font-weight-bold no-border"
                       >
-                        <v-col class="justify-center">
-                          <v-img
-                            contain
-                            cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
-                            :src="form.imgs"
-                          />
-                        </v-col>
-                        <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold no-border"
-                        >
-                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                            {{ form.Name }}
-                          </h2>
-                        </v-card-text>
-                      </v-card>
-                    </a>
-                  </template>
-                </v-hover>
+                        <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                          {{ form.Name }}
+                        </h2>
+                      </v-card-text>
+                    </v-card>
+                  </a>
+                </template>
               </div>
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <div>
@@ -197,70 +197,68 @@
               "
             >
               <div v-for="form in forms_3" :key="form.link">
-                <v-hover>
-                  <template v-slot:default="{ hover }">
-                    <a :href="form.link" target="_blank" class="link-no-underline">
-                      <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                <template>
+                  <a :href="form.link" target="_blank" class="link-no-underline">
+                    <v-card
+                      class="carditems"
+                      :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                      "
+                    >
+                      <v-col class="justify-center">
+                        <v-img
+                          class="itemsimg"
+                          contain
+                          cover
+                          height="200px"
+                          :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                          :src="form.imgs"
+                        />
+                      </v-col>
+                      <v-card-text
+                        class="d-flex flex-column text-center font-weight-bold no-border"
                       >
-                        <v-col class="justify-center">
-                          <v-img
-                            contain
-                            cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
-                            :src="form.imgs"
-                          />
-                        </v-col>
-                        <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold no-border"
-                        >
-                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                            {{ form.Name }}
-                          </h2>
-                        </v-card-text>
-                      </v-card>
-                    </a>
-                  </template>
-                </v-hover>
+                        <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                          {{ form.Name }}
+                        </h2>
+                      </v-card-text>
+                    </v-card>
+                  </a>
+                </template>
               </div>
               <div v-for="form in displayedForms_3" :key="form.link">
-                <v-hover>
-                  <template v-slot:default="{ hover }">
-                    <a :href="form.link" target="_blank" class="link-no-underline">
-                      <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                <template>
+                  <a :href="form.link" target="_blank" class="link-no-underline">
+                    <v-card
+                      class="carditems"
+                      :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                      "
+                    >
+                      <v-col class="justify-center">
+                        <v-img
+                          class="itemsimg"
+                          contain
+                          cover
+                          height="200px"
+                          :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                          :src="form.imgs"
+                        />
+                      </v-col>
+                      <v-card-text
+                        class="d-flex flex-column text-center font-weight-bold no-border"
                       >
-                        <v-col class="justify-center">
-                          <v-img
-                            contain
-                            cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '300px'"
-                            :src="form.imgs"
-                          />
-                        </v-col>
-                        <v-card-text
-                          class="d-flex flex-column text-center font-weight-bold no-border"
-                        >
-                          <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
-                            {{ form.Name }}
-                          </h2>
-                        </v-card-text>
-                      </v-card>
-                    </a>
-                  </template>
-                </v-hover>
+                        <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                          {{ form.Name }}
+                        </h2>
+                      </v-card-text>
+                    </v-card>
+                  </a>
+                </template>
               </div>
               <div v-if="$vuetify.breakpoint.smAndDown">
                 <div>
@@ -281,23 +279,24 @@
               "
             >
               <template v-for="(form, index) in forms4">
-                <v-hover :key="index" class="">
-                  <template v-slot:default="{ hover }">
+                <div :key="index" class="">
+                  <template>
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                        class="carditems"
+                        :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                      "
                       >
                         <v-col class="justify-center">
                           <v-img
+                            class="itemsimg"
                             contain
                             cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
                             :src="form.imgs"
                           />
                         </v-col>
@@ -311,7 +310,7 @@
                       </v-card>
                     </a>
                   </template>
-                </v-hover>
+                </div>
               </template>
             </v-row>
           </template>
@@ -325,23 +324,24 @@
               "
             >
               <template v-for="(form, index) in forms5">
-                <v-hover :key="index" class="">
-                  <template v-slot:default="{ hover }">
+                <div :key="index" class="">
+                  <template>
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
-                        :class="[
-                          hover ? 'hovered-card' : '',
+                        class="carditems"
+                        :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
                             : 'mx-auto my-2 mt-2',
-                        ]"
+                      "
                       >
                         <v-col class="justify-center">
                           <v-img
+                            class="itemsimg"
                             contain
                             cover
-                            height="250px"
-                            :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
                             :src="form.imgs"
                           />
                         </v-col>
@@ -355,7 +355,7 @@
                       </v-card>
                     </a>
                   </template>
-                </v-hover>
+                </div>
               </template>
             </v-row>
           </template>
@@ -365,12 +365,12 @@
     </div>
     <portableaudio></portableaudio>
     <div
-      class="font-weight-bold pt-10"
-      style="color: #ff5c23"
+      class="font-weight-bold pt-10 mt-4"
+      style="color: white; background-color: #ff5c23"
       :class="
         $vuetify.breakpoint.smAndDown
-          ? 'text-h5 font-weight-bold text-center'
-          : 'text-h4 text-center ml-8'
+          ? 'text-h5 font-weight-bold text-center py-6'
+          : 'text-h4 text-center py-6'
       "
     >
       Power
@@ -386,23 +386,24 @@
           "
         >
           <template v-for="(form, index) in forms6">
-            <v-hover :key="index" class="">
-              <template v-slot:default="{ hover }">
+            <div :key="index" class="">
+              <template>
                 <a :href="form.link" target="_blank" class="link-no-underline">
                   <v-card
-                    :class="[
-                      hover ? 'hovered-card' : '',
+                    class="carditems"
+                    :class="
                       $vuetify.breakpoint.smAndDown
                         ? 'my-4 mx-auto mt-2'
                         : 'mx-auto my-2 mt-2',
-                    ]"
+                    "
                   >
                     <v-col class="justify-center">
                       <v-img
+                        class="itemsimg"
                         contain
                         cover
-                        height="250px"
-                        :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                        height="200px"
+                        :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
                         :src="form.imgs"
                       />
                     </v-col>
@@ -416,7 +417,7 @@
                   </v-card>
                 </a>
               </template>
-            </v-hover>
+            </div>
           </template>
         </v-row>
       </template>
@@ -430,23 +431,24 @@
           "
         >
           <template v-for="(form, index) in forms7">
-            <v-hover :key="index" class="">
-              <template v-slot:default="{ hover }">
+            <div :key="index" class="">
+              <template>
                 <a :href="form.link" target="_blank" class="link-no-underline">
                   <v-card
-                    :class="[
-                      hover ? 'hovered-card' : '',
+                    class="cardsitem"
+                    :class="
                       $vuetify.breakpoint.smAndDown
                         ? 'my-4 mx-auto mt-2'
                         : 'mx-auto my-2 mt-2',
-                    ]"
+                    "
                   >
                     <v-col class="justify-center">
                       <v-img
+                        class="itemsimg"
                         contain
                         cover
-                        height="250px"
-                        :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                        height="200px"
+                        :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
                         :src="form.imgs"
                       />
                     </v-col>
@@ -460,7 +462,7 @@
                   </v-card>
                 </a>
               </template>
-            </v-hover>
+            </div>
           </template>
         </v-row>
       </template>
@@ -476,11 +478,11 @@
         <v-sheet class="pb-4 pt-10" color="white">
           <div
             class="font-weight-bold"
-            style="color: #ff5c23"
+            style="color: white; background-color: #ff5c23"
             :class="
               $vuetify.breakpoint.smAndDown
-                ? 'text-h5 font-weight-bold text-center'
-                : 'text-h4 text-center ml-8'
+                ? 'text-h5 font-weight-bold text-center py-6'
+                : 'text-h4 text-center py-6'
             "
           >
             Cables
@@ -496,24 +498,25 @@
                 "
               >
                 <template v-for="(form, index) in forms8">
-                  <v-hover :key="index" class="">
-                    <template v-slot:default="{ hover }">
+                  <div :key="index" class="">
+                    <template>
                       <a :href="form.link" target="_blank" class="link-no-underline">
                         <v-card
-                          :class="[
-                            hover ? 'hovered-card' : '',
+                          class="carditems"
+                          :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
-                          ]"
+                          "
                         >
                           <v-col class="justify-center">
                             <v-img
+                              class="itemsimg"
                               contain
                               cover
-                              height="250px"
+                              height="200px"
                               :max-width="
-                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
                               "
                               :src="form.imgs"
                             />
@@ -528,7 +531,7 @@
                         </v-card>
                       </a>
                     </template>
-                  </v-hover>
+                  </div>
                 </template>
               </v-row>
             </template>
@@ -542,24 +545,25 @@
                 "
               >
                 <template v-for="(form, index) in forms9">
-                  <v-hover :key="index" class="">
-                    <template v-slot:default="{ hover }">
+                  <div :key="index" class="">
+                    <template>
                       <a :href="form.link" target="_blank" class="link-no-underline">
                         <v-card
-                          :class="[
-                            hover ? 'hovered-card' : '',
+                          class="carditems"
+                          :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
-                          ]"
+                          "
                         >
                           <v-col class="justify-center">
                             <v-img
+                              class="itemsimg"
                               contain
                               cover
-                              height="250px"
+                              height="200px"
                               :max-width="
-                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
                               "
                               :src="form.imgs"
                             />
@@ -574,7 +578,7 @@
                         </v-card>
                       </a>
                     </template>
-                  </v-hover>
+                  </div>
                 </template>
               </v-row>
             </template>
@@ -588,24 +592,25 @@
                 "
               >
                 <template v-for="(form, index) in forms10">
-                  <v-hover :key="index" class="">
-                    <template v-slot:default="{ hover }">
+                  <div :key="index" class="">
+                    <template>
                       <a :href="form.link" target="_blank" class="link-no-underline">
                         <v-card
-                          :class="[
-                            hover ? 'hovered-card' : '',
+                          class="carditems"
+                          :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
-                          ]"
+                          "
                         >
                           <v-col class="justify-center">
                             <v-img
+                              class="itemsimg"
                               contain
                               cover
-                              height="250px"
+                              height="200px"
                               :max-width="
-                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
                               "
                               :src="form.imgs"
                             />
@@ -620,7 +625,7 @@
                         </v-card>
                       </a>
                     </template>
-                  </v-hover>
+                  </div>
                 </template>
               </v-row>
             </template>
@@ -634,24 +639,25 @@
                 "
               >
                 <template v-for="(form, index) in forms11">
-                  <v-hover :key="index" class="">
-                    <template v-slot:default="{ hover }">
+                  <div :key="index" class="">
+                    <template>
                       <a :href="form.link" target="_blank" class="link-no-underline">
                         <v-card
-                          :class="[
-                            hover ? 'hovered-card' : '',
+                          class="carditems"
+                          :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
-                          ]"
+                          "
                         >
                           <v-col class="justify-center">
                             <v-img
+                              class="itemsimg"
                               contain
                               cover
-                              height="250px"
+                              height="200px"
                               :max-width="
-                                $vuetify.breakpoint.smAndDown ? '290px' : '300px'
+                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
                               "
                               :src="form.imgs"
                             />
@@ -666,7 +672,7 @@
                         </v-card>
                       </a>
                     </template>
-                  </v-hover>
+                  </div>
                 </template>
               </v-row>
             </template>
@@ -1026,20 +1032,14 @@ export default {
 .link-no-underline {
   text-decoration: none;
 }
-.hovered-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-image: linear-gradient(rgba(177, 177, 177, 0.63), rgb(255, 92, 35));
-  filter: opacity(0.4);
-  transition: opacity 0.3s;
+.itemsimg:hover {
+  transform: scale(130%);
+  transition: 0.5s ease-in-out;
 }
-
-.hovered-card:hover::after {
-  opacity: 1;
+.itemsimg {
+  transition: 0.5s ease-in-out;
+}
+.carditems {
+  overflow: hidden;
 }
 </style>
