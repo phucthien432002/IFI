@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s',
-    title: 'ifi',
+    title: 'iFi',
     htmlAttrs: {
       lang: 'en'
     },
@@ -15,7 +15,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/svg', href: 'https://ifi-audio.com/wp-content/uploads/2021/03/iFi-logos_Simple.svg' },
       {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
@@ -23,7 +23,7 @@ export default {
         crossorigin: 'anonymous',
         referrerpolicy: 'no-referrer'
       },
-      {rel:'shortcut icon' ,type:'image/x-icon' ,href:'../static/images/logo/iFi-logo-big.ico'},
+
       {
 				rel: "stylesheet",
 				href: "https://fonts.googleapis.com/css?family=Poppins:300,500,700"
