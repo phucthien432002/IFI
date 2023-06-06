@@ -5,7 +5,7 @@
         <!-- Skeleton loader content -->
       </v-skeleton-loader>
     </div>
-    <div v-else>
+    <div v-else id="AccessoriesGoTo">
       <div
         class="font-weight-bold"
         style="color: white; background-color: #ff5c23"

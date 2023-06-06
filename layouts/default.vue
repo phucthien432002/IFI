@@ -18,20 +18,12 @@
               <h3>Products</h3>
               <div class="dropdown-menu">
                 <a @click="scrollTo('HomeAudioGoTo')">Home audio</a>
-                <a href="">Protable Audio</a>
-                <a href="">Power</a>
-                <a href="">Enhancers</a>
-                <a href="">Cables</a>
-                <a href="">Accessoris</a>
+                <a @click="scrollTo2('PortableGoTo')">Protable Audio</a>
+                <a @click="scrollTo3('PowerGoTo')">Power</a>
+                <a @click="scrollTo4('EnhencersGoTo')">Enhancers</a>
+                <a @click="scrollTo5('CablesGoTo')">Cables</a>
+                <a @click="scrollTo6('AccessoriesGoTo')">Accessories</a>
               </div>
-              <!-- <div class="product-list">
-                            <a href=""><h2>Home audio</h2> </a>
-                            <a href=""><h2>Protable Audio</h2> </a>
-                            <a href=""><h2>Power</h2></a>
-                            <a href=""><h2>Enhancers</h2></a>
-                            <a href=""><h2>Cables</h2></a>
-                            <a href=""><h2>Accessoris</h2></a>
-                    </div> -->
             </div>
             <div class="tool-box">
               <h3>Tools</h3>
@@ -372,6 +364,51 @@ export default {
         window.scrollTo({
           behavior: "smooth",
           top: element.offsetHeight - 150,
+        });
+      }
+    },
+    scrollTo2(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.offsetHeight + 1450,
+        });
+      }
+    },
+    scrollTo3(sectionId3) {
+      const element = document.getElementById(sectionId3);
+      if (element) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.offsetHeight + 2550,
+        });
+      }
+    },
+    scrollTo4(sectionId4) {
+      const element = document.getElementById(sectionId4);
+      if (element) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.offsetHeight + 3050,
+        });
+      }
+    },
+    scrollTo5(sectionId5) {
+      const element = document.getElementById(sectionId5);
+      if (element) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.offsetHeight + 3450,
+        });
+      }
+    },
+    scrollTo6(sectionId6) {
+      const element = document.getElementById(sectionId6);
+      if (element) {
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.offsetHeight + 3900,
         });
       }
     },

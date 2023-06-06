@@ -370,6 +370,7 @@
     </div>
     <portableaudio></portableaudio>
     <div
+      id="PowerGoTo"
       class="font-weight-bold pt-10 mt-4"
       style="color: white; background-color: #ff5c23"
       :class="
@@ -480,7 +481,7 @@
         </v-skeleton-loader>
       </div>
       <div v-else>
-        <v-sheet class="pb-4 pt-10" color="white">
+        <v-sheet class="pb-4 pt-10" color="white" id="CablesGoTo">
           <div
             class="font-weight-bold"
             style="color: white; background-color: #ff5c23"
