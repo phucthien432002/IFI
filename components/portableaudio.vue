@@ -42,7 +42,7 @@
                       contain
                       cover
                       height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>
@@ -76,7 +76,7 @@
                       contain
                       cover
                       height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>

@@ -43,14 +43,14 @@
                       contain
                       cover
                       height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>
                   <v-card-text
                     class="d-flex flex-column text-center font-weight-bold no-border"
                   >
-                    <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                    <h2 class="text-h5 font-weight-bold">
                       {{ form.Name }}
                     </h2>
                   </v-card-text>
@@ -77,14 +77,14 @@
                       contain
                       cover
                       height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>
                   <v-card-text
                     class="d-flex flex-column text-center font-weight-bold no-border"
                   >
-                    <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                    <h2 class="text-h5 font-weight-bold">
                       {{ form.Name }}
                     </h2>
                   </v-card-text>
