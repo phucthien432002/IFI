@@ -92,7 +92,9 @@
                   you an authentic, passionate and empowering music experience. Hear it.
                   Feel it.</span
                 >
-                <a class="take-tour-button" @click="scrollTo('HomeAudioGoTo')" >Take a tour</a>
+                <a class="take-tour-button" @click="scrollTo('HomeAudioGoTo')"
+                  >Take a tour</a
+                >
               </div>
               <img src="../static/images/Header/ifi-sig (2).png" alt="" />
             </div>
@@ -358,21 +360,22 @@ export default {
   components: { scrollup },
   name: "DefaultLayout",
   methods: {
-    
     scrollTo(sectionId) {
-      var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      var windowHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
       // 100vh;
-      var scrollToValue = windowHeight * 100 / 100; 
+      var scrollToValue = (windowHeight * 100) / 100;
       const element = document.getElementById(sectionId);
       if (element) {
         console.log(window.scrollY);
         window.scrollTo({
           behavior: "smooth",
-          top:  element.offsetTop + scrollToValue - 56
+          top: element.offsetTop + scrollToValue - 56,
         });
       }
     },
-    
   },
   mounted() {
     const list = this.$el.querySelector("#slider .list");
@@ -972,38 +975,43 @@ footer a:hover {
   .grid-container {
     grid-template-columns: 1fr;
   }
-  .list .item .slogan-placeholder{
+  .list .item .slogan-placeholder {
     top: 22%;
   }
-  .list .item .slogan-placeholder span{
+  .list .item .slogan-placeholder span {
     font-size: 14px;
   }
-  .list .item .product-info{
+  .list .item .product-info {
     min-width: 80vw;
   }
-  .list .item .product-info h1{
+  .list .item .product-info h1 {
     font-size: 24px;
   }
-  .list .item .product-info h2{
+  .list .item .product-info h2 {
     font-size: 18px;
   }
-  .list .item .product-info span{
+  .list .item .product-info span {
     font-size: 15px;
   }
-  .list .item .new::before{
+  .list .item .new::before {
     font-size: 16px;
     width: 70px;
   }
-  .list .item .sale::before{
+  .list .item .sale::before {
     font-size: 16px;
     width: 70px;
   }
-  .list .item .take-tour-button{
+  .list .item .take-tour-button {
     padding: 10px 35px;
     font-size: 16px;
   }
 }
 .no-border {
   border: none !important;
+}
+.v-slide-group__next,
+.v-slide-group__prev {
+  min-width: 0px !important;
+  flex: 0 !important;
 }
 </style>
