@@ -5,50 +5,52 @@
         <!-- Skeleton loader content -->
       </v-skeleton-loader>
     </div>
-    <div v-else>
+    <div v-else id="AccessoriesGoTo">
       <div
         class="font-weight-bold"
-        style="color: #ff5c23"
+        style="color: white; background-color: #ff5c23"
         :class="
           $vuetify.breakpoint.smAndDown
-            ? 'text-h5 font-weight-bold text-center'
-            : 'text-h4 text-center ml-8'
+            ? 'text-h5 font-weight-bold text-center py-6'
+            : 'text-h4 text-center py-6'
         "
       >
         Accessories
       </div>
       <v-row
+        style="gap: 50px"
         :class="
           $vuetify.breakpoint.smAndDown
-            ? 'justify-center align-center d-flex flex-column'
-            : 'd-flex justify-center align-center'
+            ? 'justify-center align-center d-flex flex-column mt-4 pb-4'
+            : 'd-flex justify-center align-center mt-4 pb-4'
         "
       >
         <template v-for="(form, index) in forms">
           <v-hover :key="index">
-            <template v-slot:default="{ hover }">
+            <template>
               <a :href="form.link" target="_blank" class="link-no-underline">
                 <v-card
-                  :class="[
-                    hover ? 'hovered-card' : '',
+                  class="cardaccess"
+                  :class="
                     $vuetify.breakpoint.smAndDown
                       ? 'my-4 mx-auto mt-2'
                       : 'mx-auto my-2 mt-2',
-                  ]"
+                  "
                 >
                   <v-col class="justify-center">
                     <v-img
+                      class="accessimg"
                       contain
                       cover
-                      height="250px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '300px'"
+                      height="200px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '250px'"
                       :src="form.imgs"
                     />
                   </v-col>
                   <v-card-text
                     class="d-flex flex-column text-center font-weight-bold no-border"
                   >
-                    <h2 class="text-h5 font-weight-bold" style="color: #ff5c23">
+                    <h2 class="text-h5 font-weight-bold">
                       {{ form.Name }}
                     </h2>
                   </v-card-text>
@@ -104,19 +106,14 @@ export default {
 .link-no-underline {
   text-decoration: none;
 }
-.hovered-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s;
+.accessimg:hover {
+  transform: scale(130%);
+  transition: 0.5s ease-in-out;
 }
-
-.hovered-card:hover::after {
-  opacity: 1;
+.accessimg {
+  transition: 0.5s ease-in-out;
+}
+.cardaccess {
+  overflow: hidden;
 }
 </style>
