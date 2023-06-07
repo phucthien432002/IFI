@@ -22,7 +22,7 @@
         :class="
           $vuetify.breakpoint.smAndDown
             ? 'justify-center align-center d-flex flex-column mt-4 pb-4'
-            : 'd-flex justify-center align-center mt-4 pb-4'
+            : 'd-flex justify-center align-center mt-4 mb-16'
         "
       >
         <template v-for="(form, index) in forms">

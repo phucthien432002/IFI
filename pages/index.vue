@@ -6,7 +6,7 @@
       </v-skeleton-loader>
     </div>
     <div v-else>
-      <v-sheet class="pb-4 pt-10" color="white" id="HomeAudioGoTo">
+      <v-sheet class="mb-16" color="white" id="HomeAudioGoTo">
         <div
           class="font-weight-bold"
           style="color: white; background-color: #ff5c23"
@@ -388,7 +388,7 @@
           :class="
             $vuetify.breakpoint.smAndDown
               ? 'justify-center align-center d-flex flex-column'
-              : 'd-flex justify-center align-center'
+              : 'd-flex justify-center align-center mb-16'
           "
         >
           <template v-for="(form, index) in forms6">
@@ -433,7 +433,7 @@
           :class="
             $vuetify.breakpoint.smAndDown
               ? 'justify-center align-center d-flex flex-column'
-              : 'd-flex justify-center align-center'
+              : 'd-flex justify-center align-center mb-16'
           "
         >
           <template v-for="(form, index) in forms7">
@@ -481,7 +481,7 @@
         </v-skeleton-loader>
       </div>
       <div v-else>
-        <v-sheet class="pb-4 pt-10" color="white" id="CablesGoTo">
+        <v-sheet class="mb-16" color="white" id="CablesGoTo">
           <div
             class="font-weight-bold"
             style="color: white; background-color: #ff5c23"

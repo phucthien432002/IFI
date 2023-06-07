@@ -18,11 +18,11 @@
               <h3>Products</h3>
               <div class="dropdown-menu">
                 <a @click="scrollTo('HomeAudioGoTo')">Home audio</a>
-                <a @click="scrollTo2('PortableGoTo')">Protable Audio</a>
-                <a @click="scrollTo3('PowerGoTo')">Power</a>
-                <a @click="scrollTo4('EnhencersGoTo')">Enhancers</a>
-                <a @click="scrollTo5('CablesGoTo')">Cables</a>
-                <a @click="scrollTo6('AccessoriesGoTo')">Accessories</a>
+                <a @click="scrollTo('PortableGoTo')">Protable Audio</a>
+                <a @click="scrollTo('PowerGoTo')">Power</a>
+                <a @click="scrollTo('EnhencersGoTo')">Enhancers</a>
+                <a @click="scrollTo('CablesGoTo')">Cables</a>
+                <a @click="scrollTo('AccessoriesGoTo')">Accessories</a>
               </div>
             </div>
             <div class="tool-box">
@@ -92,7 +92,7 @@
                   you an authentic, passionate and empowering music experience. Hear it.
                   Feel it.</span
                 >
-                <a class="take-tour-button">Take a tour</a>
+                <a class="take-tour-button" @click="scrollTo('HomeAudioGoTo')" >Take a tour</a>
               </div>
               <img src="../static/images/Header/ifi-sig (2).png" alt="" />
             </div>
@@ -358,60 +358,21 @@ export default {
   components: { scrollup },
   name: "DefaultLayout",
   methods: {
+    
     scrollTo(sectionId) {
+      var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      // 100vh;
+      var scrollToValue = windowHeight * 100 / 100; 
       const element = document.getElementById(sectionId);
       if (element) {
+        console.log(window.scrollY);
         window.scrollTo({
           behavior: "smooth",
-          top: element.offsetHeight - 150,
+          top:  element.offsetTop + scrollToValue - 56
         });
       }
     },
-    scrollTo2(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        window.scrollTo({
-          behavior: "smooth",
-          top: element.offsetHeight + 1450,
-        });
-      }
-    },
-    scrollTo3(sectionId3) {
-      const element = document.getElementById(sectionId3);
-      if (element) {
-        window.scrollTo({
-          behavior: "smooth",
-          top: element.offsetHeight + 2550,
-        });
-      }
-    },
-    scrollTo4(sectionId4) {
-      const element = document.getElementById(sectionId4);
-      if (element) {
-        window.scrollTo({
-          behavior: "smooth",
-          top: element.offsetHeight + 3050,
-        });
-      }
-    },
-    scrollTo5(sectionId5) {
-      const element = document.getElementById(sectionId5);
-      if (element) {
-        window.scrollTo({
-          behavior: "smooth",
-          top: element.offsetHeight + 3450,
-        });
-      }
-    },
-    scrollTo6(sectionId6) {
-      const element = document.getElementById(sectionId6);
-      if (element) {
-        window.scrollTo({
-          behavior: "smooth",
-          top: element.offsetHeight + 3900,
-        });
-      }
-    },
+    
   },
   mounted() {
     const list = this.$el.querySelector("#slider .list");
@@ -1010,6 +971,36 @@ footer a:hover {
 
   .grid-container {
     grid-template-columns: 1fr;
+  }
+  .list .item .slogan-placeholder{
+    top: 22%;
+  }
+  .list .item .slogan-placeholder span{
+    font-size: 14px;
+  }
+  .list .item .product-info{
+    min-width: 80vw;
+  }
+  .list .item .product-info h1{
+    font-size: 24px;
+  }
+  .list .item .product-info h2{
+    font-size: 18px;
+  }
+  .list .item .product-info span{
+    font-size: 15px;
+  }
+  .list .item .new::before{
+    font-size: 16px;
+    width: 70px;
+  }
+  .list .item .sale::before{
+    font-size: 16px;
+    width: 70px;
+  }
+  .list .item .take-tour-button{
+    padding: 10px 35px;
+    font-size: 16px;
   }
 }
 .no-border {

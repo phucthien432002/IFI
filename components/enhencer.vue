@@ -23,7 +23,7 @@
         :class="
           $vuetify.breakpoint.smAndDown
             ? 'justify-center align-center d-flex flex-column mt-4'
-            : 'd-flex justify-center align-center mt-4'
+            : 'd-flex justify-center align-center mt-4 mb-16'
         "
       >
         <div v-for="form in forms_enhencer" :key="form.link">
