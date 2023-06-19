@@ -481,7 +481,7 @@
         </v-skeleton-loader>
       </div>
       <div v-else>
-        <v-sheet class="mb-16" color="white" id="CablesGoTo">
+        <v-sheet class="mb-16 mt-4" color="white" id="CablesGoTo">
           <div
             class="font-weight-bold"
             style="color: white; background-color: #ff5c23"
