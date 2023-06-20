@@ -34,11 +34,9 @@
                 >
                   <v-col class="justify-center">
                     <v-img
-                      class="accessimg"
-                      contain
-                      cover
-                      height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '290px' : '250px'"
+                      class="itemsimg"
+                      height="180px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '250px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>

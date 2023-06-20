@@ -33,11 +33,9 @@
                 >
                   <v-col class="justify-center">
                     <v-img
-                      class="portableimg"
-                      contain
-                      cover
-                      height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '270px'"
+                      class="itemsimg"
+                      height="180px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '250px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>
@@ -67,11 +65,9 @@
                 >
                   <v-col class="justify-center">
                     <v-img
-                      class="portableimg"
-                      contain
-                      cover
-                      height="200px"
-                      :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '270px'"
+                      class="itemsimg"
+                      height="180px"
+                      :max-width="$vuetify.breakpoint.smAndDown ? '250px' : '270px'"
                       :src="form.imgs"
                     />
                   </v-col>
