@@ -32,8 +32,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -64,8 +64,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -273,8 +273,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -317,8 +317,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -483,8 +483,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -527,8 +527,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -571,8 +571,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -615,8 +615,8 @@
                         class="carditems"
                         :class="
                           $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2'
+                            ? 'my-4 mt-2'
+                            : 'my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
