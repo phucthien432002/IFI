@@ -16,7 +16,8 @@
           <div class="navigation-placeholder">
             <div class="blog-feature">
               <a href="https://ifi-audio.com/home/ifi-blog/" target="_blank"
-              ><h3>News</h3></a>
+                ><h3>News</h3></a
+              >
             </div>
             <div class="product-list">
               <h3>Products</h3>
@@ -559,10 +560,9 @@ export default {
   position: relative;
   cursor: pointer;
 }
-.navigation-placeholder .blog-feature a{
+.navigation-placeholder .blog-feature a {
   text-decoration: none;
   color: #ff5c23;
-
 }
 
 .navigation-placeholder .dropdown-menu {
@@ -1012,5 +1012,8 @@ footer a:hover {
 .v-slide-group__prev {
   min-width: 0px !important;
   flex: 0 !important;
+}
+.navigation-placeholder .blog-feature:hover {
+  border-bottom: 2px solid #ff5c23 !important;
 }
 </style>
