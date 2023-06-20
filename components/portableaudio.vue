@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div v-if="isLoading">
-      <v-skeleton-loader :transition="transition" type="card-avatar, actions">
-        <!-- Skeleton loader content -->
-      </v-skeleton-loader>
-    </div>
-    <div v-else>
+    <div>
       <div
         id="PortableGoTo"
         class="font-weight-bold"
@@ -33,9 +28,8 @@
                 <v-card
                   class="cardportable"
                   :class="
-                    $vuetify.breakpoint.smAndDown
-                      ? 'my-4 mx-auto mt-2'
-                      : 'my-2 mt-2',"
+                    $vuetify.breakpoint.smAndDown ? 'my-4 mx-auto mt-2' : 'my-2 mt-2'
+                  "
                 >
                   <v-col class="justify-center">
                     <v-img
@@ -68,7 +62,7 @@
                   :class="
                     $vuetify.breakpoint.smAndDown
                       ? 'my-4 mx-auto mt-2'
-                      : 'mx-auto my-2 mt-2',
+                      : 'mx-auto my-2 mt-2'
                   "
                 >
                   <v-col class="justify-center">
@@ -109,12 +103,11 @@
 export default {
   data() {
     return {
-      isLoading: false,
       length: 3,
       showAll_portable: false,
       forms: [
         {
-          imgs: "/images/PortableAudio/golink.png",
+          imgs: "/images/PortableAudio/golink-min.png",
           Name: "GO Link",
           link: "https://3kshop.vn/ifi-go-link/",
         },
@@ -134,7 +127,7 @@ export default {
           link: "https://3kshop.vn/ifi-go-bar/",
         },
         {
-          imgs: "/images/PortableAudio/goblu.jpg",
+          imgs: "/images/PortableAudio/goblu-min.jpg",
           Name: "GO Blu",
           link: "https://3kshop.vn/ifi-go-blu/",
         },
@@ -154,7 +147,7 @@ export default {
           link: "https://3kshop.vn/ifi-xdsd-gryphon/",
         },
         {
-          imgs: "/images/PortableAudio/microidsd.jpg",
+          imgs: "/images/PortableAudio/microidsd-min.jpg",
           Name: "micro iDSD Signature",
           link: "https://3kshop.vn/ifi-micro-idsd-signature/",
         },
@@ -186,12 +179,6 @@ export default {
       }
       this.showAll_portable = !this.showAll_portable;
     },
-  },
-  mounted() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 500);
   },
 };
 </script>

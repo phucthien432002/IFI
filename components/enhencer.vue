@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div v-if="isLoading">
-      <v-skeleton-loader :transition="transition" type="card-avatar, actions">
-        <!-- Skeleton loader content -->
-      </v-skeleton-loader>
-    </div>
-    <div v-else>
+    <div>
       <div
         id="EnhencersGoTo"
         class="font-weight-bold"
@@ -35,7 +30,7 @@
                   :class="
                     $vuetify.breakpoint.smAndDown
                       ? 'my-4 mx-auto mt-2'
-                      : 'mx-auto my-2 mt-2',
+                      : 'mx-auto my-2 mt-2'
                   "
                 >
                   <v-col class="justify-center">
@@ -69,7 +64,7 @@
                   :class="
                     $vuetify.breakpoint.smAndDown
                       ? 'my-4 mx-auto mt-2'
-                      : 'mx-auto my-2 mt-2',
+                      : 'mx-auto my-2 mt-2'
                   "
                 >
                   <v-col class="justify-center">
@@ -110,7 +105,6 @@
 export default {
   data() {
     return {
-      isLoading: false,
       length: 3,
       showAll_enhencer: false,
       forms: [
@@ -125,7 +119,7 @@ export default {
           link: "https://3kshop.vn/isilencer/",
         },
         {
-          imgs: "/images/Enhencers/lanisilence.jpg",
+          imgs: "/images/Enhencers/lanisilence-min.jpg",
           Name: "LAN iSilencer",
           link: "https://3kshop.vn/ifi-lan-isilencer/",
         },
@@ -162,12 +156,6 @@ export default {
       }
       this.showAll_enhencer = !this.showAll_enhencer;
     },
-  },
-  mounted() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 500);
   },
 };
 </script>

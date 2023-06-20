@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div v-if="isLoading">
-      <v-skeleton-loader :transition="transition" type="card-avatar, actions">
-        <!-- Skeleton loader content -->
-      </v-skeleton-loader>
-    </div>
-    <div v-else id="AccessoriesGoTo">
+    <div id="AccessoriesGoTo">
       <div
         class="font-weight-bold"
         style="color: white; background-color: #ff5c23"
@@ -34,7 +29,7 @@
                   :class="
                     $vuetify.breakpoint.smAndDown
                       ? 'my-4 mx-auto mt-2'
-                      : 'mx-auto my-2 mt-2',
+                      : 'mx-auto my-2 mt-2'
                   "
                 >
                   <v-col class="justify-center">
@@ -68,10 +63,9 @@
 export default {
   data() {
     return {
-      isLoading: false,
       forms: [
         {
-          imgs: "/images/Accessories/gobluecase.png",
+          imgs: "/images/Accessories/gobluecase-min.png",
           Name: "GO blu Case",
           link: "https://3kshop.vn/ifi-go-blu-case/",
         },
@@ -81,7 +75,7 @@ export default {
           link: "https://3kshop.vn/ifi-hip-case/",
         },
         {
-          imgs: "/images/Accessories/xdsd.jpg",
+          imgs: "/images/Accessories/xdsd-min.jpg",
           Name: "xDSD Gryphon Case",
           link: "https://3kshop.vn/ifi-xdsd-gryphon-case/",
         },
@@ -92,12 +86,6 @@ export default {
         },
       ],
     };
-  },
-  mounted() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 500);
   },
 };
 </script>

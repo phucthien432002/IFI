@@ -110,7 +110,7 @@
               <h2>Your network. Silenced.</h2>
               <span>No more distorted audio signal</span>
             </div>
-            <img src="../static/images/Header/DSCF5033.jpg" alt="" />
+            <img src="../static/images/Header/DSCF5033-min.jpg" alt="" />
           </a>
           <a class="item" href="https://3kshop.vn/ifi-go-bar/" target="_blank">
             <div class="product-info">
@@ -120,7 +120,7 @@
                 >Premium USB DAC. World's most powerful headphone amp of its size</span
               >
             </div>
-            <img src="../static/images/Header/go-bar-hero.jpg" alt="" />
+            <img src="../static/images/Header/go-bar-hero-min.jpg" alt="" />
           </a>
           <a class="item" href="https://3kshop.vn/ifi-go-link/" target="_blank">
             <div class="product-info new">
@@ -128,7 +128,7 @@
               <h2>The headphone dongle linking you with your music</h2>
               <span>Superior sound with a twist</span>
             </div>
-            <img src="../static/images/Header/GO-link-1.jpg" alt="" />
+            <img src="../static/images/Header/GO-link-1-min.jpg" alt="" />
           </a>
           <a class="item" href="https://3kshop.vn/ifi-go-pod/" target="_blank">
             <div class="product-info new">
@@ -136,7 +136,7 @@
               <h2>World-class. Wireless</h2>
               <span>Wearable HD Bluetooth DAC and headphone amp</span>
             </div>
-            <img src="../static/images/Header/go-pod-hero.jpg" alt="" />
+            <img src="../static/images/Header/go-pod-hero-min.jpg" alt="" />
           </a>
           <a
             class="item"
@@ -147,7 +147,7 @@
               <h1>ZEN CAN Signature Set MZ99 & Meze 99 Classics</h1>
               <h2>Limited Time Offer - Save up to 25%</h2>
             </div>
-            <img src="../static/images/Header/mz99-meze-set.jpg" alt="" />
+            <img src="../static/images/Header/mz99-meze-set-min.jpg" alt="" />
           </a>
           <a class="item" href="https://3kshop.vn/ifi-neo-stream/" target="_blank">
             <div class="product-info">
@@ -155,7 +155,7 @@
               <h2>Network audio streamer</h2>
               <span>Built by passionate enthusiasts, for passionate enthusiasts</span>
             </div>
-            <img src="../static/images/Header/neos1.jpg" alt="" />
+            <img src="../static/images/Header/neos1-min.jpg" alt="" />
           </a>
           <a class="item" href="https://3kshop.vn/ifi-uno/" target="_blank">
             <div class="product-info new">

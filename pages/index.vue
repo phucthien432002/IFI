@@ -33,7 +33,7 @@
                         :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
+                            : 'mx-auto my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -67,7 +67,7 @@
                         :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
+                            : 'mx-auto my-2 mt-2'
                         "
                       >
                         <v-col class="justify-center">
@@ -117,9 +117,9 @@
                     <v-card
                       class="carditems"
                       :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
+                        $vuetify.breakpoint.smAndDown
+                          ? 'my-4 mx-auto mt-2'
+                          : 'mx-auto my-2 mt-2'
                       "
                     >
                       <v-col class="justify-center">
@@ -149,10 +149,10 @@
                     <v-card
                       class="carditems"
                       :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
-                        "
+                        $vuetify.breakpoint.smAndDown
+                          ? 'my-4 mx-auto mt-2'
+                          : 'mx-auto my-2 mt-2'
+                      "
                     >
                       <v-col class="justify-center">
                         <v-img
@@ -200,9 +200,9 @@
                     <v-card
                       class="carditems"
                       :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
+                        $vuetify.breakpoint.smAndDown
+                          ? 'my-4 mx-auto mt-2'
+                          : 'mx-auto my-2 mt-2'
                       "
                     >
                       <v-col class="justify-center">
@@ -232,9 +232,9 @@
                     <v-card
                       class="carditems"
                       :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
+                        $vuetify.breakpoint.smAndDown
+                          ? 'my-4 mx-auto mt-2'
+                          : 'mx-auto my-2 mt-2'
                       "
                     >
                       <v-col class="justify-center">
@@ -286,8 +286,8 @@
                         :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
-                      "
+                            : 'mx-auto my-2 mt-2'
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -332,8 +332,8 @@
                         :class="
                           $vuetify.breakpoint.smAndDown
                             ? 'my-4 mx-auto mt-2'
-                            : 'mx-auto my-2 mt-2',
-                      "
+                            : 'mx-auto my-2 mt-2'
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -396,7 +396,7 @@
                     :class="
                       $vuetify.breakpoint.smAndDown
                         ? 'my-4 mx-auto mt-2'
-                        : 'mx-auto my-2 mt-2',
+                        : 'mx-auto my-2 mt-2'
                     "
                   >
                     <v-col class="justify-center">
@@ -442,7 +442,7 @@
                     :class="
                       $vuetify.breakpoint.smAndDown
                         ? 'my-4 mx-auto mt-2'
-                        : 'mx-auto my-2 mt-2',
+                        : 'mx-auto my-2 mt-2'
                     "
                   >
                     <v-col class="justify-center">
@@ -502,10 +502,10 @@
                       <v-card
                         class="carditems"
                         :class="
-                            $vuetify.breakpoint.smAndDown
-                              ? 'my-4 mx-auto mt-2'
-                              : 'mx-auto my-2 mt-2',
-                          "
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2'
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -548,10 +548,10 @@
                       <v-card
                         class="carditems"
                         :class="
-                            $vuetify.breakpoint.smAndDown
-                              ? 'my-4 mx-auto mt-2'
-                              : 'mx-auto my-2 mt-2',
-                          "
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2'
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -594,10 +594,10 @@
                       <v-card
                         class="carditems"
                         :class="
-                            $vuetify.breakpoint.smAndDown
-                              ? 'my-4 mx-auto mt-2'
-                              : 'mx-auto my-2 mt-2',
-                          "
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2'
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -640,10 +640,10 @@
                       <v-card
                         class="carditems"
                         :class="
-                            $vuetify.breakpoint.smAndDown
-                              ? 'my-4 mx-auto mt-2'
-                              : 'mx-auto my-2 mt-2',
-                          "
+                          $vuetify.breakpoint.smAndDown
+                            ? 'my-4 mx-auto mt-2'
+                            : 'mx-auto my-2 mt-2'
+                        "
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -744,15 +744,9 @@ export default {
       this.showAll_3 = !this.showAll_3;
     },
   },
-  mounted() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 500);
-  },
+
   data() {
     return {
-      isLoading: false,
       length: 3,
       showAll_1: false,
       showAll_2: false,
@@ -784,17 +778,17 @@ export default {
           link: "https://3kshop.vn/ifi-uno/",
         },
         {
-          imgs: "/images/DACs/zenairdac.jpg",
+          imgs: "/images/DACs/zenairdac-min.png",
           Name: "Zen Air DAC",
           link: "https://3kshop.vn/ifi-zen-air-dac/",
         },
         {
-          imgs: "/images/DACs/zenairblue.png",
+          imgs: "/images/DACs/zenairblue-min.png",
           Name: "Zen Air Blue",
           link: "https://3kshop.vn/ifi-zen-air-blue/",
         },
         {
-          imgs: "/images/DACs/zendacv2.jpg",
+          imgs: "/images/DACs/zendacv2-min.png",
           Name: "Zen DAC V2",
           link: "https://3kshop.vn/ifi-zen-dac-v2/",
         },
@@ -816,7 +810,7 @@ export default {
       ],
       forms2: [
         {
-          imgs: "/images/DAC-Amps/proidsdsig.jpg",
+          imgs: "/images/DAC-Amps/proidsdsig-min.jpg",
           Name: "Pro iDSD Signature",
           link: "https://3kshop.vn/ifi-pro-idsd-signature/",
         },
@@ -831,7 +825,7 @@ export default {
           link: "https://3kshop.vn/ifi-uno/",
         },
         {
-          imgs: "/images/DAC-Amps/microidsd.jpg",
+          imgs: "/images/DAC-Amps/microidsd-min.jpg",
           Name: "micro iDSD Signature",
           link: "https://3kshop.vn/ifi-micro-idsd-signature/",
         },
@@ -890,7 +884,7 @@ export default {
       ],
       forms4: [
         {
-          imgs: "/images/Streams/zenstream.png",
+          imgs: "/images/Streams/zenstream-min.png",
           Name: "Zen Stream",
           link: "https://3kshop.vn/ifi-zen-stream/",
         },
@@ -902,7 +896,7 @@ export default {
       ],
       forms5: [
         {
-          imgs: "/images/Systems/aurora.jpg",
+          imgs: "/images/Systems/aurora-min.jpg",
           Name: "Aurora",
           link: "https://3kshop.vn/ifi-aurora/",
         },
@@ -975,7 +969,7 @@ export default {
           link: "https://3kshop.vn/ifi-gemini-3-0/",
         },
         {
-          imgs: "/images/Cable/mecury3.0.jpg",
+          imgs: "/images/Cable/mecury3.0-min.jpg",
           Name: "Mecury 3.0",
           link: "https://3kshop.vn/ifi-mercury-3-0/",
         },
@@ -987,7 +981,7 @@ export default {
           link: "https://3kshop.vn/ifi-groundhog/",
         },
         {
-          imgs: "/images/Cable/nova.jpeg",
+          imgs: "/images/Cable/nova-min.jpeg",
           Name: "Nova",
           link: "https://3kshop.vn/ifi-nova/",
         },
@@ -1010,12 +1004,6 @@ export default {
         },
       ],
     };
-  },
-  mounted() {
-    this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 500);
   },
 };
 </script>
