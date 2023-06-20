@@ -27,7 +27,7 @@
               <a :href="form.link" target="_blank" class="link-no-underline">
                 <v-card
                   class="cardportable"
-                  :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
+                  :class="$vuetify.breakpoint.smAndDown ? 'mb-4 mt-2' : 'mb-2 mt-2'"
                 >
                   <v-col class="justify-center">
                     <v-img
@@ -55,7 +55,7 @@
               <a :href="form.link" target="_blank" class="link-no-underline">
                 <v-card
                   class="cardportable"
-                  :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
+                  :class="$vuetify.breakpoint.smAndDown ? 'mb-4 mt-2' : 'mb-2 mt-2'"
                 >
                   <v-col class="justify-center">
                     <v-img
