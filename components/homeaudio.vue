@@ -41,9 +41,5 @@ export default {
     margin-bottom: 8px; /* Add spacing between tab items */
     border: none !important;
   }
-
-  .no-border {
-    border: none !important;
-  }
 }
 </style>

@@ -3,7 +3,7 @@
     <v-btn
       v-show="showFab"
       v-scroll="checkScroll"
-      class="scrollupicon mr-3"
+      class="scrollupicon"
       :light="$vuetify.theme.dark"
       fab
       fixed
