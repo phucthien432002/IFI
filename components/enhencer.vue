@@ -35,7 +35,7 @@
                 >
                   <v-col class="justify-center">
                     <v-img
-                      class="itemsimg"
+                      class="enhencerimg"
                       height="180px"
                       :max-width="$vuetify.breakpoint.smAndDown ? '250px' : '270px'"
                       :src="form.imgs"
@@ -67,7 +67,7 @@
                 >
                   <v-col class="justify-center">
                     <v-img
-                      class="itemsimg"
+                      class="enhencerimg"
                       height="180px"
                       :max-width="$vuetify.breakpoint.smAndDown ? '250px' : '270px'"
                       :src="form.imgs"

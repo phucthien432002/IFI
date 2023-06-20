@@ -34,7 +34,7 @@
                 >
                   <v-col class="justify-center">
                     <v-img
-                      class="itemsimg"
+                      class="accessimg"
                       height="180px"
                       :max-width="$vuetify.breakpoint.smAndDown ? '250px' : '270px'"
                       :src="form.imgs"
