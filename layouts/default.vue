@@ -14,6 +14,10 @@
             </div>
           </div>
           <div class="navigation-placeholder">
+            <div class="blog-feature">
+              <a href="https://ifi-audio.com/home/ifi-blog/" target="_blank"
+              ><h3>News</h3></a>
+            </div>
             <div class="product-list">
               <h3>Products</h3>
               <div class="dropdown-menu">
@@ -385,9 +389,9 @@ export default {
     const next = this.$el.querySelector("#next");
     let active = 0;
     const countItem = items.length;
-    // const autoRef = setInterval(() => {
-    //   next.click();
-    // }, 5000);
+    const autoRef = setInterval(() => {
+      next.click();
+    }, 5000);
 
     next.onclick = function nextItem() {
       if (active + 1 >= countItem) {
@@ -548,23 +552,18 @@ export default {
   gap: 100px;
 }
 
+.navigation-placeholder .blog-feature,
 .navigation-placeholder .product-list,
 .navigation-placeholder .tool-box,
 .navigation-placeholder .support-box {
   position: relative;
   cursor: pointer;
 }
-
-/* .navigation-placeholder .product-list{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 70%;
-}
-.navigation-placeholder .product-list a{
-  color: #ff5c23;
+.navigation-placeholder .blog-feature a{
   text-decoration: none;
-} */
+  color: #ff5c23;
+
+}
 
 .navigation-placeholder .dropdown-menu {
   display: flex;
