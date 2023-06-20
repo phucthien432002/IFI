@@ -16,28 +16,12 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/svg', href: 'https://ifi-audio.com/wp-content/uploads/2021/03/iFi-logos_Simple.svg' },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-        integrity: 'sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==',
-        crossorigin: 'anonymous',
-        referrerpolicy: 'no-referrer'
-      },
-
-      {
-				rel: "stylesheet",
-				href: "https://fonts.googleapis.com/css?family=Poppins:300,500,700"
-			}
     ],
     script: [
       {
         src: 'https://kit.fontawesome.com/325c78919c.js',
         crossorigin: 'anonymous'
-      },
-      { src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js" },
-			{
-				src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"
-			}
+      }
     ]
   },
 
