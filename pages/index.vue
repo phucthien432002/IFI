@@ -30,11 +30,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -62,11 +58,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -112,11 +104,7 @@
                   <a :href="form.link" target="_blank" class="link-no-underline">
                     <v-card
                       class="carditems"
-                      :class="
-                        $vuetify.breakpoint.smAndDown
-                          ? 'my-4 mx-auto mt-2'
-                          : 'mx-auto my-2 mt-2'
-                      "
+                      :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                     >
                       <v-col class="justify-center">
                         <v-img
@@ -142,11 +130,7 @@
                   <a :href="form.link" target="_blank" class="link-no-underline">
                     <v-card
                       class="carditems"
-                      :class="
-                        $vuetify.breakpoint.smAndDown
-                          ? 'my-4 mx-auto mt-2'
-                          : 'mx-auto my-2 mt-2'
-                      "
+                      :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                     >
                       <v-col class="justify-center">
                         <v-img
@@ -191,11 +175,7 @@
                   <a :href="form.link" target="_blank" class="link-no-underline">
                     <v-card
                       class="carditems"
-                      :class="
-                        $vuetify.breakpoint.smAndDown
-                          ? 'my-4 mx-auto mt-2'
-                          : 'mx-auto my-2 mt-2'
-                      "
+                      :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                     >
                       <v-col class="justify-center">
                         <v-img
@@ -221,11 +201,7 @@
                   <a :href="form.link" target="_blank" class="link-no-underline">
                     <v-card
                       class="carditems"
-                      :class="
-                        $vuetify.breakpoint.smAndDown
-                          ? 'my-4 mx-auto mt-2'
-                          : 'mx-auto my-2 mt-2'
-                      "
+                      :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                     >
                       <v-col class="justify-center">
                         <v-img
@@ -271,11 +247,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -315,11 +287,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -377,11 +345,7 @@
                 <a :href="form.link" target="_blank" class="link-no-underline">
                   <v-card
                     class="carditems"
-                    :class="
-                      $vuetify.breakpoint.smAndDown
-                        ? 'my-4 mx-auto mt-2'
-                        : 'mx-auto my-2 mt-2'
-                    "
+                    :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                   >
                     <v-col class="justify-center">
                       <v-img
@@ -421,11 +385,7 @@
                 <a :href="form.link" target="_blank" class="link-no-underline">
                   <v-card
                     class="carditems"
-                    :class="
-                      $vuetify.breakpoint.smAndDown
-                        ? 'my-4 mx-auto mt-2'
-                        : 'mx-auto my-2 mt-2'
-                    "
+                    :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                   >
                     <v-col class="justify-center">
                       <v-img
@@ -481,11 +441,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -525,11 +481,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -569,11 +521,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
@@ -613,11 +561,7 @@
                     <a :href="form.link" target="_blank" class="link-no-underline">
                       <v-card
                         class="carditems"
-                        :class="
-                          $vuetify.breakpoint.smAndDown
-                            ? 'my-4 mt-2'
-                            : 'my-2 mt-2'
-                        "
+                        :class="$vuetify.breakpoint.smAndDown ? 'my-4 mt-2' : 'my-2 mt-2'"
                       >
                         <v-col class="justify-center">
                           <v-img
