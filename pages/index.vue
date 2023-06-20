@@ -1,11 +1,6 @@
 <template>
   <div>
-    <div v-if="isLoading">
-      <v-skeleton-loader :transition="transition" type="card-avatar, actions">
-        <!-- Skeleton loader content -->
-      </v-skeleton-loader>
-    </div>
-    <div v-else>
+    <div>
       <v-sheet class="mb-16" color="white" id="HomeAudioGoTo">
         <div
           class="font-weight-bold"
@@ -385,6 +380,7 @@
       <template v-slot:tab1>
         <!-- Content for Tab 1 -->
         <v-row
+          style="gap: 50px"
           :class="
             $vuetify.breakpoint.smAndDown
               ? 'justify-center align-center d-flex flex-column'
@@ -430,6 +426,7 @@
       <template v-slot:tab2>
         <!-- Content for Tab 2 -->
         <v-row
+          style="gap: 50px"
           :class="
             $vuetify.breakpoint.smAndDown
               ? 'justify-center align-center d-flex flex-column'
@@ -475,216 +472,205 @@
     </homeaudio>
     <enhencer></enhencer>
     <div>
-      <div v-if="isLoading">
-        <v-skeleton-loader :transition="transition" type="card-avatar, actions">
-          <!-- Skeleton loader content -->
-        </v-skeleton-loader>
-      </div>
-      <div v-else>
-        <v-sheet class="mb-16 mt-4" color="white" id="CablesGoTo">
-          <div
-            class="font-weight-bold"
-            style="color: white; background-color: #ff5c23"
-            :class="
-              $vuetify.breakpoint.smAndDown
-                ? 'text-h5 font-weight-bold text-center py-6'
-                : 'text-h4 text-center py-6'
-            "
-          >
-            Cables
-          </div>
-          <homeaudio :tabs="tabs2" class="mt-2">
-            <template v-slot:tab1>
-              <!-- Content for Tab 1 -->
-              <v-row
-                :class="
-                  $vuetify.breakpoint.smAndDown
-                    ? 'justify-center align-center d-flex flex-column'
-                    : 'd-flex justify-center align-center'
-                "
-              >
-                <template v-for="(form, index) in forms8">
-                  <div :key="index" class="">
-                    <template>
-                      <a :href="form.link" target="_blank" class="link-no-underline">
-                        <v-card
-                          class="carditems"
-                          :class="
+      <v-sheet class="mb-16 mt-4" color="white" id="CablesGoTo">
+        <div
+          class="font-weight-bold"
+          style="color: white; background-color: #ff5c23"
+          :class="
+            $vuetify.breakpoint.smAndDown
+              ? 'text-h5 font-weight-bold text-center py-6'
+              : 'text-h4 text-center py-6'
+          "
+        >
+          Cables
+        </div>
+        <homeaudio :tabs="tabs2" class="mt-2">
+          <template v-slot:tab1>
+            <!-- Content for Tab 1 -->
+            <v-row
+              style="gap: 50px"
+              :class="
+                $vuetify.breakpoint.smAndDown
+                  ? 'justify-center align-center d-flex flex-column'
+                  : 'd-flex justify-center align-center'
+              "
+            >
+              <template v-for="(form, index) in forms8">
+                <div :key="index" class="">
+                  <template>
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        class="carditems"
+                        :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
                           "
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            class="itemsimg"
+                            contain
+                            cover
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
-                          <v-col class="justify-center">
-                            <v-img
-                              class="itemsimg"
-                              contain
-                              cover
-                              height="200px"
-                              :max-width="
-                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
-                              "
-                              :src="form.imgs"
-                            />
-                          </v-col>
-                          <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold no-border"
-                          >
-                            <h2 class="text-h5 font-weight-bold">
-                              {{ form.Name }}
-                            </h2>
-                          </v-card-text>
-                        </v-card>
-                      </a>
-                    </template>
-                  </div>
-                </template>
-              </v-row>
-            </template>
-            <template v-slot:tab2>
-              <!-- Content for Tab 2 -->
-              <v-row
-                :class="
-                  $vuetify.breakpoint.smAndDown
-                    ? 'justify-center align-center d-flex flex-column'
-                    : 'd-flex justify-center align-center'
-                "
-              >
-                <template v-for="(form, index) in forms9">
-                  <div :key="index" class="">
-                    <template>
-                      <a :href="form.link" target="_blank" class="link-no-underline">
-                        <v-card
-                          class="carditems"
-                          :class="
+                          <h2 class="text-h5 font-weight-bold">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </div>
+              </template>
+            </v-row>
+          </template>
+          <template v-slot:tab2>
+            <!-- Content for Tab 2 -->
+            <v-row
+              style="gap: 50px"
+              :class="
+                $vuetify.breakpoint.smAndDown
+                  ? 'justify-center align-center d-flex flex-column'
+                  : 'd-flex justify-center align-center'
+              "
+            >
+              <template v-for="(form, index) in forms9">
+                <div :key="index" class="">
+                  <template>
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        class="carditems"
+                        :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
                           "
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            class="itemsimg"
+                            contain
+                            cover
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
-                          <v-col class="justify-center">
-                            <v-img
-                              class="itemsimg"
-                              contain
-                              cover
-                              height="200px"
-                              :max-width="
-                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
-                              "
-                              :src="form.imgs"
-                            />
-                          </v-col>
-                          <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold no-border"
-                          >
-                            <h2 class="text-h5 font-weight-bold">
-                              {{ form.Name }}
-                            </h2>
-                          </v-card-text>
-                        </v-card>
-                      </a>
-                    </template>
-                  </div>
-                </template>
-              </v-row>
-            </template>
-            <template v-slot:tab3>
-              <!-- Content for Tab 2 -->
-              <v-row
-                :class="
-                  $vuetify.breakpoint.smAndDown
-                    ? 'justify-center align-center d-flex flex-column'
-                    : 'd-flex justify-center align-center'
-                "
-              >
-                <template v-for="(form, index) in forms10">
-                  <div :key="index" class="">
-                    <template>
-                      <a :href="form.link" target="_blank" class="link-no-underline">
-                        <v-card
-                          class="carditems"
-                          :class="
+                          <h2 class="text-h5 font-weight-bold">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </div>
+              </template>
+            </v-row>
+          </template>
+          <template v-slot:tab3>
+            <!-- Content for Tab 2 -->
+            <v-row
+              style="gap: 50px"
+              :class="
+                $vuetify.breakpoint.smAndDown
+                  ? 'justify-center align-center d-flex flex-column'
+                  : 'd-flex justify-center align-center'
+              "
+            >
+              <template v-for="(form, index) in forms10">
+                <div :key="index" class="">
+                  <template>
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        class="carditems"
+                        :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
                           "
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            class="itemsimg"
+                            contain
+                            cover
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
-                          <v-col class="justify-center">
-                            <v-img
-                              class="itemsimg"
-                              contain
-                              cover
-                              height="200px"
-                              :max-width="
-                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
-                              "
-                              :src="form.imgs"
-                            />
-                          </v-col>
-                          <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold no-border"
-                          >
-                            <h2 class="text-h5 font-weight-bold">
-                              {{ form.Name }}
-                            </h2>
-                          </v-card-text>
-                        </v-card>
-                      </a>
-                    </template>
-                  </div>
-                </template>
-              </v-row>
-            </template>
-            <template v-slot:tab4>
-              <!-- Content for Tab 2 -->
-              <v-row
-                :class="
-                  $vuetify.breakpoint.smAndDown
-                    ? 'justify-center align-center d-flex flex-column'
-                    : 'd-flex justify-center align-center'
-                "
-              >
-                <template v-for="(form, index) in forms11">
-                  <div :key="index" class="">
-                    <template>
-                      <a :href="form.link" target="_blank" class="link-no-underline">
-                        <v-card
-                          class="carditems"
-                          :class="
+                          <h2 class="text-h5 font-weight-bold">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </div>
+              </template>
+            </v-row>
+          </template>
+          <template v-slot:tab4>
+            <!-- Content for Tab 2 -->
+            <v-row
+              style="gap: 50px"
+              :class="
+                $vuetify.breakpoint.smAndDown
+                  ? 'justify-center align-center d-flex flex-column'
+                  : 'd-flex justify-center align-center'
+              "
+            >
+              <template v-for="(form, index) in forms11">
+                <div :key="index" class="">
+                  <template>
+                    <a :href="form.link" target="_blank" class="link-no-underline">
+                      <v-card
+                        class="carditems"
+                        :class="
                             $vuetify.breakpoint.smAndDown
                               ? 'my-4 mx-auto mt-2'
                               : 'mx-auto my-2 mt-2',
                           "
+                      >
+                        <v-col class="justify-center">
+                          <v-img
+                            class="itemsimg"
+                            contain
+                            cover
+                            height="200px"
+                            :max-width="$vuetify.breakpoint.smAndDown ? '300px' : '250px'"
+                            :src="form.imgs"
+                          />
+                        </v-col>
+                        <v-card-text
+                          class="d-flex flex-column text-center font-weight-bold no-border"
                         >
-                          <v-col class="justify-center">
-                            <v-img
-                              class="itemsimg"
-                              contain
-                              cover
-                              height="200px"
-                              :max-width="
-                                $vuetify.breakpoint.smAndDown ? '300px' : '250px'
-                              "
-                              :src="form.imgs"
-                            />
-                          </v-col>
-                          <v-card-text
-                            class="d-flex flex-column text-center font-weight-bold no-border"
-                          >
-                            <h2 class="text-h5 font-weight-bold">
-                              {{ form.Name }}
-                            </h2>
-                          </v-card-text>
-                        </v-card>
-                      </a>
-                    </template>
-                  </div>
-                </template>
-              </v-row>
-            </template>
-          </homeaudio>
-        </v-sheet>
-      </div>
+                          <h2 class="text-h5 font-weight-bold">
+                            {{ form.Name }}
+                          </h2>
+                        </v-card-text>
+                      </v-card>
+                    </a>
+                  </template>
+                </div>
+              </template>
+            </v-row>
+          </template>
+        </homeaudio>
+      </v-sheet>
     </div>
     <accessories></accessories>
   </div>
@@ -798,7 +784,7 @@ export default {
           link: "https://3kshop.vn/ifi-uno/",
         },
         {
-          imgs: "/images/DACs/zenairdac.png",
+          imgs: "/images/DACs/zenairdac.jpg",
           Name: "Zen Air DAC",
           link: "https://3kshop.vn/ifi-zen-air-dac/",
         },
@@ -808,7 +794,7 @@ export default {
           link: "https://3kshop.vn/ifi-zen-air-blue/",
         },
         {
-          imgs: "/images/DACs/zendacv2.png",
+          imgs: "/images/DACs/zendacv2.jpg",
           Name: "Zen DAC V2",
           link: "https://3kshop.vn/ifi-zen-dac-v2/",
         },
